@@ -9,11 +9,11 @@
 import home from './home'
 
 export default {
-  name: 'dashboard',
+  name: 'home-layout',
   components: {home},
   data() {
     return {
-      currentRole: 'client'
+      currentRole: 'home'
     }
   },
   computed: {
