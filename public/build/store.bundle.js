@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8d2f49b53937b83733aa"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9ee396109db0d1f26b43"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -90544,7 +90544,8 @@ var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprit
   route: {
     i18n: 'I18n',
     home: 'Home',
-    offers: 'Offers'
+    offers: 'Offers',
+    products: 'Products'
   },
   navbar: {
     products: 'offers'
@@ -90612,7 +90613,8 @@ var i18n = new __WEBPACK_IMPORTED_MODULE_2_vue_i18n__["a" /* default */]({
     route: {
         i18n: 'I18n',
         home: 'Home',
-        offers: 'Ofertas'
+        offers: 'Ofertas',
+        products: 'Produtos'
     },
     navbar: {
         products: 'ofertas'
