@@ -12,7 +12,7 @@ class CategoryTableSeeder extends Seeder
     public function run()
     {
         foreach ($this->getData() as $m) {
-            factory(\StorePool\Models\Category::class)->create($m);
+            factory(\StoreTI\Models\Category::class)->create($m);
         }
     }
 
