@@ -6,7 +6,7 @@
       :default-active="$route.path"
       :collapse="isCollapse"
       background-color="#302e61"
-      text-color="#5a4942"
+      text-color="#ffc107"
       active-text-color="#0bbbd1"
         >
       <sidebar-item v-for="route in permission_routers" :key="route.name" :item="route" :base-path="route.path"></sidebar-item>
