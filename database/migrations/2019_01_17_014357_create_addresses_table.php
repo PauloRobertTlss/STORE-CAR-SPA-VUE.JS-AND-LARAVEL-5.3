@@ -25,8 +25,8 @@ class CreateAddressesTable extends Migration
             $table->string('complement',30)->nullable();
             $table->string('reference_point',40)->nullable();
             $table->string('postcode',10)->nullable();
-            $table->integer('client_id')->unsigned();
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->integer('customer_id')->unsigned();
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->timestamps();
 		});
 	}

@@ -17,8 +17,8 @@ class CreateSaleOrdersTable extends Migration
 	{
 		Schema::create('sale_orders', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('client_id')->unsigned()->index();
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->integer('customer_id')->unsigned()->index();
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->integer('address_id')->unsigned()->index();
             $table->foreign('address_id')->references('id')->on('addresses');
 
