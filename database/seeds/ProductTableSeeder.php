@@ -11,14 +11,20 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        $repository = app(StorePoll\Repositories\Interfaces\ProductRepository::class);
-        $categoryRepository = app(StorePoll\Repositories\Interfaces\CategoryRepository::class);
+        $repository = app(StoreTI\Repositories\Interfaces\ProductRepository::class);
+        $categoryRepository = app(StoreTI\Repositories\Interfaces\CategoryRepository::class);
 
         foreach ($this->getData() as $m) {
             $tags = $m['tags'];
             $categs = $m['categories'];
             $m = array_except($m,'tags');
             $m = array_except($m,'categories');
+
+                if(!isset($m['image_path'])){
+                    $i = rand(1, 10);
+                    $m['image_path'] = "https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/not$i.png";
+                }
+
             $prod = $repository->skipPresenter()->create($m);
 
             foreach ($tags as $t){
@@ -27,15 +33,12 @@ class ProductTableSeeder extends Seeder
             unset($tags);
 
             foreach ($categs as $c){
-                $attCategory = $categoryRepository->skipPresenter()->find($c['category_id']);
-                $prod->categories()->attach($attCategory);
-
+                $prod->categories()->attach($c['category_id']);
             }
             unset($categs);
         }
-
-
     }
+
 
     private function getData(){
         return [
@@ -545,8 +548,8 @@ class ProductTableSeeder extends Seeder
 
     private function getCategories()
     {
-        /**@var \StorePoll\Repositories\Interfaces\CategoryRepository $repository **/
-        $repository = app(\StorePoll\Repositories\Interfaces\CategoryRepository::class);
+        /**@var \StoreTI\Repositories\Interfaces\CategoryRepository $repository **/
+        $repository = app(\StoreTI\Repositories\Interfaces\CategoryRepository::class);
         $repository->skipPresenter(true);
         return $repository->all();
     }
