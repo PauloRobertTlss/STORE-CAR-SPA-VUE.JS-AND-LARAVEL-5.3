@@ -17,9 +17,14 @@ class CreateCustomersTable extends Migration
 	{
 		Schema::create('customers', function(Blueprint $table) {
             $table->increments('id');
-
+            $table->string('name',60);
             $table->timestamps();
 		});
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->integer('customer_id')->unsigned();
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+        });
 	}
 
 	/**

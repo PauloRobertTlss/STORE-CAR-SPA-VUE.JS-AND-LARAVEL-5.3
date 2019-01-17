@@ -17,7 +17,11 @@ class CreateSaleLinesTable extends Migration
 	{
 		Schema::create('sale_lines', function(Blueprint $table) {
             $table->increments('id');
-
+            $table->integer('product_id')->unsigned()->index();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->integer('sale_order_id')->unsigned()->index();
+            $table->foreign('sale_order_id')->references('id')->on('products')->onDelete('cascade');
+            $table->double('price_current',15,2)->nullable();
             $table->timestamps();
 		});
 	}
