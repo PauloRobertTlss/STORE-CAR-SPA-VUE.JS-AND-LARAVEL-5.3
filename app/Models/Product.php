@@ -23,5 +23,15 @@ class Product extends Model implements Transformable
     protected $fillable = ['id','name','description','price','image_path'];
 
 
+    public function tags()
+    {
+        return $this->morphMany(Tag::class, 'source')->orderBy('id', 'asc');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'product_categories','product_id','category_id','id');
+    }
+
 
 }

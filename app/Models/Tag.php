@@ -22,4 +22,8 @@ class Tag extends Model implements Transformable
      */
     protected $fillable = ['id','title','source_id','source_type'];
 
+    public function taglable()
+    {
+        return $this->morphTo();
+    }
 }
