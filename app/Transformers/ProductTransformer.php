@@ -24,6 +24,7 @@ class ProductTransformer extends TransformerAbstract
         return [
             'id'         => (int) $model->id,
             'name'         => (String) $model->name,
+            'price'         => (float) $model->price,
             'image_path'         => (String) $model->image_path
         ];
     }
