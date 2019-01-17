@@ -37,7 +37,7 @@ export const asyncRouterMap = [
         name: 'manageProducts',
         meta: {
             title: 'products',
-            icon: 'cash-machine'
+            icon: 'shopping-online'
         },
         children: [
             {
@@ -45,9 +45,8 @@ export const asyncRouterMap = [
                 components:{default: fetchProductsList},
                 name: 'fetchProductsList',
                 meta: {
-                    title: 'billReceives',
-                    icon: 'cash-machine',
-                    roles: ['manage.billreceives']
+                    title: 'offers',
+                    icon: 'shopping-online'
                 }
             },
             {
