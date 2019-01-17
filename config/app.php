@@ -176,6 +176,7 @@ return [
         // StoreTI\Providers\BroadcastServiceProvider::class,
         StoreTI\Providers\EventServiceProvider::class,
         StoreTI\Providers\RouteServiceProvider::class,
+        StoreTI\Providers\RepositoryServiceProvider::class,
 
         Barryvdh\Cors\ServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
