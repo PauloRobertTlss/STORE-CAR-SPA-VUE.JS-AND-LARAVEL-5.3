@@ -24,13 +24,12 @@
     export default {
         name: 'offersList',
         data() {
-
             return {
                 search:''
             }
         },
         computed:{
-            companies() {
+            offers() {
                 return this.$store.state.products.offers;
             }
         },
@@ -39,8 +38,6 @@
         },
         watch: {
             search(after, before) {
-
-
                 this.$store.commit('SET_COMPANY_FILTER', after);
                 this.$store.dispatch('queryCompanies')
             }
@@ -61,5 +58,5 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-    
+
 </style>
