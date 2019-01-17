@@ -7,11 +7,11 @@ use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
 /**
- * Class Category.
+ * Class Contact.
  *
  * @package namespace StorePoll\Models;
  */
-class Category extends Model implements Transformable
+class Contact extends Model implements Transformable
 {
     use TransformableTrait;
 
@@ -20,6 +20,6 @@ class Category extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = ['id','title'];
+    protected $fillable = ['id',''];
 
 }

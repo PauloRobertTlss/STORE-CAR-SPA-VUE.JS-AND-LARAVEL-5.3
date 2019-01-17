@@ -20,6 +20,6 @@ class Tag extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['id','title','source_id','source_type'];
 
 }

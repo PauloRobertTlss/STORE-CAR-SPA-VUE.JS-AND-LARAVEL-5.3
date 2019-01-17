@@ -20,6 +20,6 @@ class SaleLine extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['id','sale_order_id','product_id','price_current'];
 
 }
