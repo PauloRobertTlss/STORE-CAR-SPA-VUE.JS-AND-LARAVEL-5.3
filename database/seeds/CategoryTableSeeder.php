@@ -11,6 +11,29 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        foreach ($this->getData() as $m) {
+            factory(\StorePool\Models\Category::class)->create($m);
+        }
+    }
+
+    private function getData()
+    {
+            return [
+                ['title'=>'Notebook'],
+                ['title'=>'Memoria'],
+                ['title'=>'Adaptadores'],
+                ['title'=>'Suportes'],
+                ['title'=>'Desktop'],
+                ['title'=>'Ultrabook'],
+                ['title'=>'Acessorios'],
+                ['title'=>'Audio'],
+                ['title'=>'Video'],
+                ['title'=>'Placa Video'],
+                ['title'=>'Carregadores'],
+                ['title'=>'Mesas'],
+                ['title'=>'Escritorio'],
+                ['title'=>'Game'],
+                ['title'=>'Industria']
+                ];
     }
 }
