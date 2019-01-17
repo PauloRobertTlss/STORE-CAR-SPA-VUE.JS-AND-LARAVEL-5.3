@@ -1,16 +1,16 @@
 <?php
 
-namespace StorePoll\Repositories;
+namespace StoreTI\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\Interfaces\UserRepository;
-use StorePoll\Models\User;
+use StoreTI\Repositories\Interfaces\UserRepository;
+use StoreTI\Models\User;
 
 /**
  * Class UserRepositoryEloquent.
  *
- * @package namespace StorePoll\Repositories;
+ * @package namespace StoreTI\Repositories;
  */
 class UserRepositoryEloquent extends BaseRepository implements UserRepository
 {

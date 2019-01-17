@@ -220,7 +220,7 @@ return [
     */
     'generator'  => [
         'basePath'      => app_path(),
-        'rootNamespace' => 'StorePoll\\',
+        'rootNamespace' => 'StoreTI\\',
         'paths'         => [
             'models'       => 'Models',
             'repositories' => 'Repositories',

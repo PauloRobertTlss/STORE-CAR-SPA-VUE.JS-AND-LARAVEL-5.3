@@ -1,14 +1,14 @@
 <?php
 
-namespace StorePoll\Presenters;
+namespace StoreTI\Presenters;
 
-use StorePoll\Transformers\TagTransformer;
+use StoreTI\Transformers\TagTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
  * Class TagPresenter.
  *
- * @package namespace StorePoll\Presenters;
+ * @package namespace StoreTI\Presenters;
  */
 class TagPresenter extends FractalPresenter
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace StorePool\Http\Middleware;
+namespace StoreTI\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

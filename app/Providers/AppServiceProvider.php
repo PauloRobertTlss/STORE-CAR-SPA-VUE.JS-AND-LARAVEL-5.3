@@ -1,6 +1,6 @@
 <?php
 
-namespace StorePool\Providers;
+namespace StoreTI\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

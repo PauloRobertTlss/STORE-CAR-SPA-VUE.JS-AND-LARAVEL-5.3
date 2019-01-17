@@ -1,6 +1,6 @@
 <?php
 
-namespace StorePool\Providers;
+namespace StoreTI\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'StorePool\Model' => 'StorePool\Policies\ModelPolicy',
+        'StoreTI\Model' => 'StoreTI\Policies\ModelPolicy',
     ];
 
     /**

@@ -1,21 +1,21 @@
 <?php
 
-namespace StorePoll\Transformers;
+namespace StoreTI\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use StorePoll\Models\Contact;
+use StoreTI\Models\Contact;
 
 /**
  * Class ContactTransformer.
  *
- * @package namespace StorePoll\Transformers;
+ * @package namespace StoreTI\Transformers;
  */
 class ContactTransformer extends TransformerAbstract
 {
     /**
      * Transform the Contact entity.
      *
-     * @param \StorePoll\Models\Contact $model
+     * @param \StoreTI\Models\Contact $model
      *
      * @return array
      */

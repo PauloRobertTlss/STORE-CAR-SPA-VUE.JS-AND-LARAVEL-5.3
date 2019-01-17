@@ -1,14 +1,14 @@
 <?php
 
-namespace StorePoll\Presenters;
+namespace StoreTI\Presenters;
 
-use StorePoll\Transformers\CustomerTransformer;
+use StoreTI\Transformers\CustomerTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
  * Class CustomerPresenter.
  *
- * @package namespace StorePoll\Presenters;
+ * @package namespace StoreTI\Presenters;
  */
 class CustomerPresenter extends FractalPresenter
 {

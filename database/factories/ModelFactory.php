@@ -12,9 +12,8 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(\StorePool\Models\User::class, function (Faker\Generator $faker) {
+$factory->define(\StoreTI\Models\User::class, function (Faker\Generator $faker) {
     static $password;
-
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
@@ -23,17 +22,16 @@ $factory->define(\StorePool\Models\User::class, function (Faker\Generator $faker
     ];
 });
 
-$factory->define(\StorePool\Models\Category::class, function (Faker\Generator $faker) {
-
+$factory->define(\StoreTI\Models\Category::class, function (Faker\Generator $faker) {
     return [
-        'title' => $faker->name,
+        'title' => $faker->title,
     ];
 });
 
-$factory->define(\StorePool\Models\Product::class, function (Faker\Generator $faker) {
+$factory->define(\StoreTI\Models\Product::class, function (Faker\Generator $faker) {
 
     return [
-        'name' => $faker->name,
+        'name' => $faker->title,
         'description' => $faker->sentence,
         'price' => rand(100,900),
         'image_path' => null,

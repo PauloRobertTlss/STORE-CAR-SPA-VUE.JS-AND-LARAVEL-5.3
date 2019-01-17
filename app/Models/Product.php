@@ -1,6 +1,6 @@
 <?php
 
-namespace StorePoll\Models;
+namespace StoreTI\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Transformable;
@@ -9,7 +9,7 @@ use Prettus\Repository\Traits\TransformableTrait;
 /**
  * Class Product.
  *
- * @package namespace StorePoll\Models;
+ * @package namespace StoreTI\Models;
  */
 class Product extends Model implements Transformable
 {
@@ -21,5 +21,7 @@ class Product extends Model implements Transformable
      * @var array
      */
     protected $fillable = ['id','name','description','price','image_path'];
+
+
 
 }

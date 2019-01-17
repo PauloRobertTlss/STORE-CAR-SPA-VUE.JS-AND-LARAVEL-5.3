@@ -1,13 +1,13 @@
 <?php
 
-namespace StorePoll\Repositories\Interfaces;
+namespace StoreTI\Repositories\Interfaces;
 
 use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
  * Interface UserRepository.
  *
- * @package namespace StorePoll\Repositories\Interfaces;
+ * @package namespace StoreTI\Repositories\Interfaces;
  */
 interface UserRepository extends RepositoryInterface
 {

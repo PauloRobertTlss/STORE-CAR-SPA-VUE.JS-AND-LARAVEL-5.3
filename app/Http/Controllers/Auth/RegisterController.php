@@ -1,9 +1,9 @@
 <?php
 
-namespace StorePool\Http\Controllers\Auth;
+namespace StoreTI\Http\Controllers\Auth;
 
-use StorePool\User;
-use StorePool\Http\Controllers\Controller;
+use StoreTI\User;
+use StoreTI\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -58,7 +58,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \StorePool\User
+     * @return \StoreTI\User
      */
     protected function create(array $data)
     {

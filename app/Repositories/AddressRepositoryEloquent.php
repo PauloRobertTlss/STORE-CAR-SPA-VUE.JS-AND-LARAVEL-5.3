@@ -1,17 +1,17 @@
 <?php
 
-namespace StorePoll\Repositories;
+namespace StoreTI\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\Interfaces\AddressRepository;
-use StorePoll\Models\Address;
-use StorePoll\Validators\AddressValidator;
+use StoreTI\Repositories\Interfaces\AddressRepository;
+use StoreTI\Models\Address;
+use StoreTI\Validators\AddressValidator;
 
 /**
  * Class AddressRepositoryEloquent.
  *
- * @package namespace StorePoll\Repositories;
+ * @package namespace StoreTI\Repositories;
  */
 class AddressRepositoryEloquent extends BaseRepository implements AddressRepository
 {

@@ -1,21 +1,21 @@
 <?php
 
-namespace StorePoll\Transformers;
+namespace StoreTI\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use StorePoll\Models\Tag;
+use StoreTI\Models\Tag;
 
 /**
  * Class TagTransformer.
  *
- * @package namespace StorePoll\Transformers;
+ * @package namespace StoreTI\Transformers;
  */
 class TagTransformer extends TransformerAbstract
 {
     /**
      * Transform the Tag entity.
      *
-     * @param \StorePoll\Models\Tag $model
+     * @param \StoreTI\Models\Tag $model
      *
      * @return array
      */

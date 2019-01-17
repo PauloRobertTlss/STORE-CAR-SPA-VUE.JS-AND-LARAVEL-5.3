@@ -1,21 +1,21 @@
 <?php
 
-namespace StorePoll\Transformers;
+namespace StoreTI\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use StorePoll\Models\Address;
+use StoreTI\Models\Address;
 
 /**
  * Class AddressTransformer.
  *
- * @package namespace StorePoll\Transformers;
+ * @package namespace StoreTI\Transformers;
  */
 class AddressTransformer extends TransformerAbstract
 {
     /**
      * Transform the Address entity.
      *
-     * @param \StorePoll\Models\Address $model
+     * @param \StoreTI\Models\Address $model
      *
      * @return array
      */

@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => StorePool\User::class,
+            'model' => StoreTI\User::class,
         ],
 
         // 'users' => [

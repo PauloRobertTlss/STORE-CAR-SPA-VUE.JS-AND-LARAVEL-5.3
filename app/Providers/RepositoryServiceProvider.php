@@ -1,6 +1,6 @@
 <?php
 
-namespace StorePool\Providers;
+namespace StoreTI\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -23,15 +23,15 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(\StorePoll\Repositories\Interfaces\CategoryRepository::class, \StorePoll\Repositories\CategoryRepositoryEloquent::class);
-        $this->app->bind(\StorePoll\Repositories\Interfaces\ProductRepository::class, \StorePoll\Repositories\ProductRepositoryEloquent::class);
-        $this->app->bind(\StorePoll\Repositories\Interfaces\TagRepository::class, \StorePoll\Repositories\TagRepositoryEloquent::class);
-        $this->app->bind(\StorePoll\Repositories\Interfaces\SaleOrderRepository::class, \StorePoll\Repositories\SaleOrderRepositoryEloquent::class);
-        $this->app->bind(\StorePoll\Repositories\Interfaces\SaleLineRepository::class, \StorePoll\Repositories\SaleLineRepositoryEloquent::class);
-        $this->app->bind(\StorePoll\Repositories\Interfaces\CustomerRepository::class, \StorePoll\Repositories\CustomerRepositoryEloquent::class);
-        $this->app->bind(\StorePoll\Repositories\Interfaces\UserRepository::class, \StorePoll\Repositories\UserRepositoryEloquent::class);
-        $this->app->bind(\StorePoll\Repositories\Interfaces\AddressRepository::class, \StorePoll\Repositories\AddressRepositoryEloquent::class);
-        $this->app->bind(\StorePoll\Repositories\Interfaces\ContactRepository::class, \StorePoll\Repositories\ContactRepositoryEloquent::class);
+        $this->app->bind(\StoreTI\Repositories\Interfaces\CategoryRepository::class, \StoreTI\Repositories\CategoryRepositoryEloquent::class);
+        $this->app->bind(\StoreTI\Repositories\Interfaces\ProductRepository::class, \StoreTI\Repositories\ProductRepositoryEloquent::class);
+        $this->app->bind(\StoreTI\Repositories\Interfaces\TagRepository::class, \StoreTI\Repositories\TagRepositoryEloquent::class);
+        $this->app->bind(\StoreTI\Repositories\Interfaces\SaleOrderRepository::class, \StoreTI\Repositories\SaleOrderRepositoryEloquent::class);
+        $this->app->bind(\StoreTI\Repositories\Interfaces\SaleLineRepository::class, \StoreTI\Repositories\SaleLineRepositoryEloquent::class);
+        $this->app->bind(\StoreTI\Repositories\Interfaces\CustomerRepository::class, \StoreTI\Repositories\CustomerRepositoryEloquent::class);
+        $this->app->bind(\StoreTI\Repositories\Interfaces\UserRepository::class, \StoreTI\Repositories\UserRepositoryEloquent::class);
+        $this->app->bind(\StoreTI\Repositories\Interfaces\AddressRepository::class, \StoreTI\Repositories\AddressRepositoryEloquent::class);
+        $this->app->bind(\StoreTI\Repositories\Interfaces\ContactRepository::class, \StoreTI\Repositories\ContactRepositoryEloquent::class);
         //:end-bindings:
     }
 }

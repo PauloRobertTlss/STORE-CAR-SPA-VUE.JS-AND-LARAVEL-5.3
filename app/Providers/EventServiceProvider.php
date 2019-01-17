@@ -1,6 +1,6 @@
 <?php
 
-namespace StorePool\Providers;
+namespace StoreTI\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'StorePool\Events\Event' => [
-            'StorePool\Listeners\EventListener',
+        'StoreTI\Events\Event' => [
+            'StoreTI\Listeners\EventListener',
         ],
     ];
 

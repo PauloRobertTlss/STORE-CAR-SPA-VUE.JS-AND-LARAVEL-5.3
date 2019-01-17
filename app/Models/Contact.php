@@ -1,6 +1,6 @@
 <?php
 
-namespace StorePoll\Models;
+namespace StoreTI\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Transformable;
@@ -9,7 +9,7 @@ use Prettus\Repository\Traits\TransformableTrait;
 /**
  * Class Contact.
  *
- * @package namespace StorePoll\Models;
+ * @package namespace StoreTI\Models;
  */
 class Contact extends Model implements Transformable
 {

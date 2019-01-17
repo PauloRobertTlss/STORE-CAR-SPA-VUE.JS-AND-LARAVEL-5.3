@@ -1,21 +1,21 @@
 <?php
 
-namespace StorePoll\Transformers;
+namespace StoreTI\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use StorePoll\Models\Category;
+use StoreTI\Models\Category;
 
 /**
  * Class CategoryTransformer.
  *
- * @package namespace StorePoll\Transformers;
+ * @package namespace StoreTI\Transformers;
  */
 class CategoryTransformer extends TransformerAbstract
 {
     /**
      * Transform the Category entity.
      *
-     * @param \StorePoll\Models\Category $model
+     * @param \StoreTI\Models\Category $model
      *
      * @return array
      */

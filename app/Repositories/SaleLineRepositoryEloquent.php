@@ -1,16 +1,16 @@
 <?php
 
-namespace StorePoll\Repositories;
+namespace StoreTI\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\Interfaces\SaleLineRepository;
-use StorePoll\Models\SaleLine;
+use StoreTI\Repositories\Interfaces\SaleLineRepository;
+use StoreTI\Models\SaleLine;
 
 /**
  * Class SaleLineRepositoryEloquent.
  *
- * @package namespace StorePoll\Repositories;
+ * @package namespace StoreTI\Repositories;
  */
 class SaleLineRepositoryEloquent extends BaseRepository implements SaleLineRepository
 {

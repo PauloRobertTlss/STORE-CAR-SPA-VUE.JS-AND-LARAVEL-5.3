@@ -1,14 +1,14 @@
 <?php
 
-namespace StorePoll\Presenters;
+namespace StoreTI\Presenters;
 
-use StorePoll\Transformers\ContactTransformer;
+use StoreTI\Transformers\ContactTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
  * Class ContactPresenter.
  *
- * @package namespace StorePoll\Presenters;
+ * @package namespace StoreTI\Presenters;
  */
 class ContactPresenter extends FractalPresenter
 {

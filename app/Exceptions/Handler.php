@@ -1,6 +1,6 @@
 <?php
 
-namespace StorePool\Exceptions;
+namespace StoreTI\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;

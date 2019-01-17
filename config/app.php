@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        StorePool\Providers\AppServiceProvider::class,
-        StorePool\Providers\AuthServiceProvider::class,
-        // StorePool\Providers\BroadcastServiceProvider::class,
-        StorePool\Providers\EventServiceProvider::class,
-        StorePool\Providers\RouteServiceProvider::class,
+        StoreTI\Providers\AppServiceProvider::class,
+        StoreTI\Providers\AuthServiceProvider::class,
+        // StoreTI\Providers\BroadcastServiceProvider::class,
+        StoreTI\Providers\EventServiceProvider::class,
+        StoreTI\Providers\RouteServiceProvider::class,
 
         Barryvdh\Cors\ServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,

@@ -1,8 +1,8 @@
 <?php
 
-namespace StorePool\Http\Controllers\Auth;
+namespace StoreTI\Http\Controllers\Auth;
 
-use StorePool\Http\Controllers\Controller;
+use StoreTI\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller

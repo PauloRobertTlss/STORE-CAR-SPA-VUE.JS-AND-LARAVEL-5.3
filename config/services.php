@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => StorePool\User::class,
+        'model' => StoreTI\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

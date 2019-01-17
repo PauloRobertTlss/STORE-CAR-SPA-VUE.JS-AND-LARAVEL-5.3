@@ -1,17 +1,17 @@
 <?php
 
-namespace StorePoll\Repositories;
+namespace StoreTI\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\Interfaces\SaleOrderRepository;
-use StorePoll\Models\SaleOrder;
-use StorePoll\Validators\SaleOrderValidator;
+use StoreTI\Repositories\Interfaces\SaleOrderRepository;
+use StoreTI\Models\SaleOrder;
+use StoreTI\Validators\SaleOrderValidator;
 
 /**
  * Class SaleOrderRepositoryEloquent.
  *
- * @package namespace StorePoll\Repositories;
+ * @package namespace StoreTI\Repositories;
  */
 class SaleOrderRepositoryEloquent extends BaseRepository implements SaleOrderRepository
 {

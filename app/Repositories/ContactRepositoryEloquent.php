@@ -1,16 +1,16 @@
 <?php
 
-namespace StorePoll\Repositories;
+namespace StoreTI\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\Interfaces\ContactRepository;
-use StorePoll\Models\Contact;
+use StoreTI\Repositories\Interfaces\ContactRepository;
+use StoreTI\Models\Contact;
 
 /**
  * Class ContactRepositoryEloquent.
  *
- * @package namespace StorePoll\Repositories;
+ * @package namespace StoreTI\Repositories;
  */
 class ContactRepositoryEloquent extends BaseRepository implements ContactRepository
 {

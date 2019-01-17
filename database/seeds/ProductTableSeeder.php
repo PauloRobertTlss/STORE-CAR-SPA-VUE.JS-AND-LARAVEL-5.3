@@ -11,23 +11,30 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        $categories = $this->getCategories();
         $repository = app(StorePoll\Repositories\Interfaces\ProductRepository::class);
+        $categoryRepository = app(StorePoll\Repositories\Interfaces\CategoryRepository::class);
 
-        factory(\StorePoll\Models\Product::class,300)
-            ->make()
-            ->each(function($product) use($categories,$repository){
-                $category = $categories->random();
-                $product->category_id = $category->id;
+        foreach ($this->getData() as $m) {
+            $tags = $m['tags'];
+            $categs = $m['categories'];
+            $m = array_except($m,'tags');
+            $m = array_except($m,'categories');
+            $prod = $repository->skipPresenter()->create($m);
 
-                $data = $product->toArray();
-                $prod = $repository->create($data);
+            foreach ($tags as $t){
+                $prod->tags()->create($t);
+            }
+            unset($tags);
 
-            });
+            foreach ($categs as $c){
+                $attCategory = $categoryRepository->skipPresenter()->find($c['category_id']);
+                $prod->categories()->attach($attCategory);
+
+            }
+            unset($categs);
+        }
 
 
-
-        //
     }
 
     private function getData(){

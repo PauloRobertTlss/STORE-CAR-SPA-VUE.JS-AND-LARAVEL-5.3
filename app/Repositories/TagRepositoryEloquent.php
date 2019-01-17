@@ -1,17 +1,17 @@
 <?php
 
-namespace StorePoll\Repositories;
+namespace StoreTI\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\Interfaces\TagRepository;
-use StorePoll\Models\Tag;
-use StorePoll\Validators\TagValidator;
+use StoreTI\Repositories\Interfaces\TagRepository;
+use StoreTI\Models\Tag;
+use StoreTI\Validators\TagValidator;
 
 /**
  * Class TagRepositoryEloquent.
  *
- * @package namespace StorePoll\Repositories;
+ * @package namespace StoreTI\Repositories;
  */
 class TagRepositoryEloquent extends BaseRepository implements TagRepository
 {
