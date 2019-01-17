@@ -16,6 +16,8 @@ use StoreTI\Validators\ProductValidator;
  */
 class ProductRepositoryEloquent extends BaseRepository implements ProductRepository
 {
+
+    protected $fieldSearchable = ['name'=>'like','tags.title'=>'like','categories.title'=>'like'];
     /**
      * Specify Model class name
      *
@@ -25,8 +27,6 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
     {
         return Product::class;
     }
-
-    
 
     /**
      * Boot up the repository, pushing criteria
