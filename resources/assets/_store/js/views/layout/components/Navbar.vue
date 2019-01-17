@@ -60,6 +60,14 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
+  .el-menu{
+    &--horizontal{
+      background-color: #151430;
+      border-bottom: solid 1px #673AB7;
+    }
+
+  }
+
 .navbar {
   height: 50px;
   line-height: 50px;
@@ -72,6 +80,7 @@ export default {
   }
   .breadcrumb-container{
     float: left;
+
   }
   .errLog-container {
     display: inline-block;

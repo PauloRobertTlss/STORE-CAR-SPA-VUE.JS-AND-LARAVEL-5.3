@@ -118,9 +118,9 @@ export default {
 <style rel="stylesheet/scss" lang="scss" scoped>
 .tags-view-container {
   .tags-view-wrapper {
-    background: #fff;
+    background: #151430;
     height: 34px;
-    border-bottom: 1px solid #d8dce5;
+    /*border-bottom: 1px solid #d8dce5;*/
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 3px 0 rgba(0, 0, 0, .04);
     .tags-view-item {
       display: inline-block;
@@ -138,9 +138,9 @@ export default {
         margin-left: 15px;
       }
       &.active {
-        background-color: #42b983;
+        background-color: #673ab7;
         color: #fff;
-        border-color: #42b983;
+        border-color: #673ab7;
         &::before {
           content: '';
           background: #fff;

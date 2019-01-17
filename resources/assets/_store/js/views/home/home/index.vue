@@ -6,7 +6,6 @@
           <span class="tab"></span>
           <strong>ABERTO</strong>
         </span>
-        <span style="font-size:20px;padding-top:20px;display:inline-block;">Bem-vindo</span>
       </div>
     </div>
     <div>

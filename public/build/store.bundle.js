@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "7bcea46d1bf484b6c22b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "40069569082f0478c48d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -2286,8 +2286,8 @@ function mergeFn (a, b) {
         return item.name;
       });
       var first = matched[0];
-      if (first && first.name !== 'dashboard') {
-        matched = [{ path: '/dashboard', meta: { title: 'dashboard' } }].concat(matched);
+      if (first && first.name !== 'home') {
+        matched = [{ path: '/home', meta: { title: 'home' } }].concat(matched);
       }
       this.levelList = matched;
     }
@@ -2365,6 +2365,7 @@ function mergeFn (a, b) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+//
 //
 //
 //
@@ -2583,7 +2584,6 @@ var padding = 15; // tag's padding
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_components_PanThumb__ = __webpack_require__("./resources/assets/_store/js/components/PanThumb/index.vue");
-//
 //
 //
 //
@@ -5831,7 +5831,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.navbar[data-v-125e1f7c] {\n  height: 50px;\n  line-height: 50px;\n  border-radius: 0px !important;\n}\n.navbar .hamburger-container[data-v-125e1f7c] {\n  line-height: 58px;\n  height: 50px;\n  float: left;\n  padding: 0 10px;\n}\n.navbar .breadcrumb-container[data-v-125e1f7c] {\n  float: left;\n}\n.navbar .errLog-container[data-v-125e1f7c] {\n  display: inline-block;\n  vertical-align: top;\n}\n.navbar .right-menu[data-v-125e1f7c] {\n  float: right;\n  height: 100%;\n}\n.navbar .right-menu[data-v-125e1f7c]:focus {\n  outline: none;\n}\n.navbar .right-menu .right-menu-item[data-v-125e1f7c] {\n  display: inline-block;\n  margin: 0 8px;\n}\n.navbar .right-menu .screenfull[data-v-125e1f7c] {\n  height: 20px;\n}\n.navbar .right-menu .international[data-v-125e1f7c] {\n  vertical-align: top;\n}\n.navbar .right-menu .theme-switch[data-v-125e1f7c] {\n  vertical-align: 15px;\n}\n.navbar .right-menu .avatar-container[data-v-125e1f7c] {\n  height: 50px;\n  margin-right: 30px;\n}\n.navbar .right-menu .avatar-container .avatar-wrapper[data-v-125e1f7c] {\n  cursor: pointer;\n  margin-top: 5px;\n  position: relative;\n}\n.navbar .right-menu .avatar-container .avatar-wrapper .user-avatar[data-v-125e1f7c] {\n  width: 40px;\n  height: 40px;\n  border-radius: 10px;\n}\n.navbar .right-menu .avatar-container .avatar-wrapper .el-icon-caret-bottom[data-v-125e1f7c] {\n  position: absolute;\n  right: -20px;\n  top: 25px;\n  font-size: 12px;\n}\n", ""]);
+exports.push([module.i, "\n.el-menu--horizontal[data-v-125e1f7c] {\n  background-color: #151430;\n  border-bottom: solid 1px #673AB7;\n}\n.navbar[data-v-125e1f7c] {\n  height: 50px;\n  line-height: 50px;\n  border-radius: 0px !important;\n}\n.navbar .hamburger-container[data-v-125e1f7c] {\n  line-height: 58px;\n  height: 50px;\n  float: left;\n  padding: 0 10px;\n}\n.navbar .breadcrumb-container[data-v-125e1f7c] {\n  float: left;\n}\n.navbar .errLog-container[data-v-125e1f7c] {\n  display: inline-block;\n  vertical-align: top;\n}\n.navbar .right-menu[data-v-125e1f7c] {\n  float: right;\n  height: 100%;\n}\n.navbar .right-menu[data-v-125e1f7c]:focus {\n  outline: none;\n}\n.navbar .right-menu .right-menu-item[data-v-125e1f7c] {\n  display: inline-block;\n  margin: 0 8px;\n}\n.navbar .right-menu .screenfull[data-v-125e1f7c] {\n  height: 20px;\n}\n.navbar .right-menu .international[data-v-125e1f7c] {\n  vertical-align: top;\n}\n.navbar .right-menu .theme-switch[data-v-125e1f7c] {\n  vertical-align: 15px;\n}\n.navbar .right-menu .avatar-container[data-v-125e1f7c] {\n  height: 50px;\n  margin-right: 30px;\n}\n.navbar .right-menu .avatar-container .avatar-wrapper[data-v-125e1f7c] {\n  cursor: pointer;\n  margin-top: 5px;\n  position: relative;\n}\n.navbar .right-menu .avatar-container .avatar-wrapper .user-avatar[data-v-125e1f7c] {\n  width: 40px;\n  height: 40px;\n  border-radius: 10px;\n}\n.navbar .right-menu .avatar-container .avatar-wrapper .el-icon-caret-bottom[data-v-125e1f7c] {\n  position: absolute;\n  right: -20px;\n  top: 25px;\n  font-size: 12px;\n}\n", ""]);
 
 // exports
 
@@ -5906,7 +5906,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.tags-view-container .tags-view-wrapper[data-v-47c12d10] {\n  background: #fff;\n  height: 34px;\n  border-bottom: 1px solid #d8dce5;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);\n}\n.tags-view-container .tags-view-wrapper .tags-view-item[data-v-47c12d10] {\n  display: inline-block;\n  position: relative;\n  height: 26px;\n  line-height: 26px;\n  border: 1px solid #d8dce5;\n  color: #495060;\n  background: #fff;\n  padding: 0 8px;\n  font-size: 12px;\n  margin-left: 5px;\n  margin-top: 4px;\n}\n.tags-view-container .tags-view-wrapper .tags-view-item[data-v-47c12d10]:first-of-type {\n  margin-left: 15px;\n}\n.tags-view-container .tags-view-wrapper .tags-view-item.active[data-v-47c12d10] {\n  background-color: #42b983;\n  color: #fff;\n  border-color: #42b983;\n}\n.tags-view-container .tags-view-wrapper .tags-view-item.active[data-v-47c12d10]::before {\n  content: '';\n  background: #fff;\n  display: inline-block;\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  position: relative;\n  margin-right: 2px;\n}\n.tags-view-container .contextmenu[data-v-47c12d10] {\n  margin: 0;\n  background: #fff;\n  z-index: 100;\n  position: absolute;\n  list-style-type: none;\n  padding: 5px 0;\n  border-radius: 4px;\n  font-size: 12px;\n  font-weight: 400;\n  color: #333;\n  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);\n}\n.tags-view-container .contextmenu li[data-v-47c12d10] {\n  margin: 0;\n  padding: 7px 16px;\n  cursor: pointer;\n}\n.tags-view-container .contextmenu li[data-v-47c12d10]:hover {\n  background: #eee;\n}\n", ""]);
+exports.push([module.i, "\n.tags-view-container .tags-view-wrapper[data-v-47c12d10] {\n  background: #151430;\n  height: 34px;\n  /*border-bottom: 1px solid #d8dce5;*/\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);\n}\n.tags-view-container .tags-view-wrapper .tags-view-item[data-v-47c12d10] {\n  display: inline-block;\n  position: relative;\n  height: 26px;\n  line-height: 26px;\n  border: 1px solid #d8dce5;\n  color: #495060;\n  background: #fff;\n  padding: 0 8px;\n  font-size: 12px;\n  margin-left: 5px;\n  margin-top: 4px;\n}\n.tags-view-container .tags-view-wrapper .tags-view-item[data-v-47c12d10]:first-of-type {\n  margin-left: 15px;\n}\n.tags-view-container .tags-view-wrapper .tags-view-item.active[data-v-47c12d10] {\n  background-color: #673ab7;\n  color: #fff;\n  border-color: #673ab7;\n}\n.tags-view-container .tags-view-wrapper .tags-view-item.active[data-v-47c12d10]::before {\n  content: '';\n  background: #fff;\n  display: inline-block;\n  width: 8px;\n  height: 8px;\n  border-radius: 50%;\n  position: relative;\n  margin-right: 2px;\n}\n.tags-view-container .contextmenu[data-v-47c12d10] {\n  margin: 0;\n  background: #fff;\n  z-index: 100;\n  position: absolute;\n  list-style-type: none;\n  padding: 5px 0;\n  border-radius: 4px;\n  font-size: 12px;\n  font-weight: 400;\n  color: #333;\n  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);\n}\n.tags-view-container .contextmenu li[data-v-47c12d10] {\n  margin: 0;\n  padding: 7px 16px;\n  cursor: pointer;\n}\n.tags-view-container .contextmenu li[data-v-47c12d10]:hover {\n  background: #eee;\n}\n", ""]);
 
 // exports
 
@@ -72973,7 +72973,7 @@ var render = function() {
             "show-timeout": 200,
             "default-active": _vm.$route.path,
             collapse: _vm.isCollapse,
-            "background-color": "#e8f0e9",
+            "background-color": "#302e61",
             "text-color": "#5a4942",
             "active-text-color": "#0bbbd1"
           }
@@ -73244,7 +73244,8 @@ var render = function() {
           "p-id": "1691",
           "xmlns:xlink": "http://www.w3.org/1999/xlink",
           width: "64",
-          height: "64"
+          height: "64",
+          fill: "#673ab7"
         },
         on: { click: _vm.toggleClick }
       },
@@ -73594,19 +73595,7 @@ var staticRenderFns = [
           _c("span", { staticClass: "tab" }),
           _vm._v(" "),
           _c("strong", [_vm._v("ABERTO")])
-        ]),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticStyle: {
-              "font-size": "20px",
-              "padding-top": "20px",
-              display: "inline-block"
-            }
-          },
-          [_vm._v("Bem-vindo")]
-        )
+        ])
       ])
     ])
   }
@@ -89729,6 +89718,7 @@ var map = {
 	"./list.svg": "./resources/assets/_store/js/icons/svg/list.svg",
 	"./lock.svg": "./resources/assets/_store/js/icons/svg/lock.svg",
 	"./maps-and-flags.svg": "./resources/assets/_store/js/icons/svg/maps-and-flags.svg",
+	"./menu.svg": "./resources/assets/_store/js/icons/svg/menu.svg",
 	"./message.svg": "./resources/assets/_store/js/icons/svg/message.svg",
 	"./monitor.svg": "./resources/assets/_store/js/icons/svg/monitor.svg",
 	"./people.svg": "./resources/assets/_store/js/icons/svg/people.svg",
@@ -90280,6 +90270,28 @@ var symbol = new __WEBPACK_IMPORTED_MODULE_0_svg_baker_runtime_browser_symbol___
   "use": "icon-maps-and-flags-usage",
   "viewBox": "0 0 512 512",
   "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 512 512\" id=\"icon-maps-and-flags\">\r\n<g>\r\n\t<g>\r\n\t\t<path d=\"M256,0C153.755,0,70.573,83.182,70.573,185.426c0,126.888,165.939,313.167,173.004,321.035\r\n\t\t\tc6.636,7.391,18.222,7.378,24.846,0c7.065-7.868,173.004-194.147,173.004-321.035C441.425,83.182,358.244,0,256,0z M256,278.719\r\n\t\t\tc-51.442,0-93.292-41.851-93.292-93.293S204.559,92.134,256,92.134s93.291,41.851,93.291,93.293S307.441,278.719,256,278.719z\" />\r\n\t</g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n</symbol>"
+});
+var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprite_build___default.a.add(symbol);
+/* harmony default export */ __webpack_exports__["default"] = (symbol);
+
+/***/ }),
+
+/***/ "./resources/assets/_store/js/icons/svg/menu.svg":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_svg_baker_runtime_browser_symbol__ = __webpack_require__("./node_modules/svg-baker-runtime/browser-symbol.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_svg_baker_runtime_browser_symbol___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_svg_baker_runtime_browser_symbol__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprite_build__ = __webpack_require__("./node_modules/svg-sprite-loader/runtime/browser-sprite.build.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprite_build___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprite_build__);
+
+
+var symbol = new __WEBPACK_IMPORTED_MODULE_0_svg_baker_runtime_browser_symbol___default.a({
+  "id": "icon-menu",
+  "use": "icon-menu-usage",
+  "viewBox": "0 0 512 512",
+  "content": "<symbol xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 512 512\" id=\"icon-menu\">\r\n<g>\r\n\t<g>\r\n\t\t<path d=\"M491.318,235.318H20.682C9.26,235.318,0,244.577,0,256s9.26,20.682,20.682,20.682h470.636\r\n\t\t\tc11.423,0,20.682-9.259,20.682-20.682C512,244.578,502.741,235.318,491.318,235.318z\" />\r\n\t</g>\r\n</g>\r\n<g>\r\n\t<g>\r\n\t\t<path d=\"M491.318,78.439H20.682C9.26,78.439,0,87.699,0,99.121c0,11.422,9.26,20.682,20.682,20.682h470.636\r\n\t\t\tc11.423,0,20.682-9.26,20.682-20.682C512,87.699,502.741,78.439,491.318,78.439z\" />\r\n\t</g>\r\n</g>\r\n<g>\r\n\t<g>\r\n\t\t<path d=\"M491.318,392.197H20.682C9.26,392.197,0,401.456,0,412.879s9.26,20.682,20.682,20.682h470.636\r\n\t\t\tc11.423,0,20.682-9.259,20.682-20.682S502.741,392.197,491.318,392.197z\" />\r\n\t</g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n</symbol>"
 });
 var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprite_build___default.a.add(symbol);
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
