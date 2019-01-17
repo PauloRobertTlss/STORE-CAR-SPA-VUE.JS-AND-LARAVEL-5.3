@@ -1,13 +1,12 @@
 
-import { fetchList,getInfo} from '_@/api/products'
+import { fetchList,getInfo} from '_@/js/api/PRODUCTS'
 import SearchOptions from '_@/js/services/search-options';
-import moment from "moment";
 
 const product = {
     state: {
         IDCurrent: null,
         product: {name:`Teste`},
-        products: [],
+        PRODUCTS: [],
         searchOptions: new SearchOptions()
     },
     mutations: {
@@ -17,7 +16,7 @@ const product = {
                 state.productCurrent = {name:`Teste`}
             }
         },
-        SET_productS: (state, data) => {
+        SET_PRODUCTS: (state, data) => {
             state.products = data
         },
         SET_PRODUCT_FILTER: (state, filter) => {
@@ -54,16 +53,17 @@ const product = {
         queryProducts({commit,state}) {
             let searchOptions = state.searchOptions;
             return new Promise((resolve, reject) => {
-                return fetchList(searchOptions.createOptions(),{
-                    // use before callback
-                    before(request) {
-                        // abort previous request, if exists
-                        if (this.previousRequest) {
-                            this.previousRequest.abort();
-                        }
-                        // set previous request on Vue instance
-                        this.previousRequest = request;
-                    }}
+                return fetchList(searchOptions.createOptions(),
+                    {
+                        //use before callback
+                        before(request) {
+                            //abort previous request, if exists
+                            if (this.previousRequest) {
+                                this.previousRequest.abort();
+                            }
+                            //set previous request on Vue instance
+                            this.previousRequest = request;
+                        }}
                 ).then(response => {
                     commit('SET_PRODUCTS', response.data.data);
                     resolve(response);
