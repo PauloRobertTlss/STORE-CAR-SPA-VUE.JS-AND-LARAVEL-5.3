@@ -12,6 +12,8 @@ use StoreTI\Models\Product;
  */
 class ProductTransformer extends TransformerAbstract
 {
+
+    protected $defaultIncludes = ['tags','categories'];
     /**
      * Transform the Product entity.
      *
@@ -24,7 +26,20 @@ class ProductTransformer extends TransformerAbstract
         return [
             'id'         => (int) $model->id,
             'name'         => (String) $model->name,
+            'description'         => (String) $model->description,
             'image_path'         => (String) $model->image_path
         ];
     }
+
+    public function includeCategories(Product $model){
+        $trans = new CategoryTransformer();
+        $trans->setDefaultIncludes([]);
+        return $this->collection($model->categories, $trans);
+    }
+
+    public function includeTags(Product $model){
+        return $this->collection($model->tags, new TagTransformer());
+    }
+
+
 }

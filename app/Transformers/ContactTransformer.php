@@ -23,11 +23,7 @@ class ContactTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-
-            /* place your other model properties here */
-
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'contact'         => (String) $model->contact
         ];
     }
 }
