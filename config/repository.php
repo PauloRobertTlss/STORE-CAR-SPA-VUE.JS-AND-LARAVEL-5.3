@@ -220,7 +220,7 @@ return [
     */
     'generator'  => [
         'basePath'      => app_path(),
-        'rootNamespace' => 'LaVuCRM\\',
+        'rootNamespace' => 'StorePoll\\',
         'paths'         => [
             'models'       => 'Models',
             'repositories' => 'Repositories',
