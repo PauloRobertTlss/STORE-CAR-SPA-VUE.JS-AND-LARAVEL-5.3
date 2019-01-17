@@ -3,7 +3,8 @@ export default {
         i18n: 'I18n',
         home:'Home',
         offers:'Ofertas',
-        products:'Produtos'
+        products:'Produtos',
+        search:'Buscar'
     },
     navbar: {
         products: 'ofertas'
