@@ -4,7 +4,7 @@ namespace StorePoll\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\ProductRepository;
+use StorePoll\Repositories\Interfaces\ProductRepository;
 use StorePoll\Models\Product;
 use StorePoll\Validators\ProductValidator;
 

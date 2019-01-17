@@ -4,7 +4,7 @@ namespace StorePoll\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\TagRepository;
+use StorePoll\Repositories\Interfaces\TagRepository;
 use StorePoll\Models\Tag;
 use StorePoll\Validators\TagValidator;
 

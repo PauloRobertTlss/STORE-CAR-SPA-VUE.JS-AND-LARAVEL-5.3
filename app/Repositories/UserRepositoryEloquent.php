@@ -4,9 +4,8 @@ namespace StorePoll\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\UserRepository;
+use StorePoll\Repositories\Interfaces\UserRepository;
 use StorePoll\Models\User;
-use StorePoll\Validators\UserValidator;
 
 /**
  * Class UserRepositoryEloquent.

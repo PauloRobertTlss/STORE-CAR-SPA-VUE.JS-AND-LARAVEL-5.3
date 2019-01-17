@@ -4,15 +4,15 @@ namespace StorePoll\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\Interfaces\CustomerRepository;
-use StorePoll\Models\Customer;
+use StorePoll\Repositories\Interfaces\ContactRepository;
+use StorePoll\Models\Contact;
 
 /**
- * Class CustomerRepositoryEloquent.
+ * Class ContactRepositoryEloquent.
  *
  * @package namespace StorePoll\Repositories;
  */
-class CustomerRepositoryEloquent extends BaseRepository implements CustomerRepository
+class ContactRepositoryEloquent extends BaseRepository implements ContactRepository
 {
     /**
      * Specify Model class name
@@ -21,7 +21,7 @@ class CustomerRepositoryEloquent extends BaseRepository implements CustomerRepos
      */
     public function model()
     {
-        return Customer::class;
+        return Contact::class;
     }
 
     

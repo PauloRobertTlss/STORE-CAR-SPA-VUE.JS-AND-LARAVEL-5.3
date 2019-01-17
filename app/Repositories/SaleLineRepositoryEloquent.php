@@ -4,9 +4,8 @@ namespace StorePoll\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\SaleLineRepository;
+use StorePoll\Repositories\Interfaces\SaleLineRepository;
 use StorePoll\Models\SaleLine;
-use StorePoll\Validators\SaleLineValidator;
 
 /**
  * Class SaleLineRepositoryEloquent.

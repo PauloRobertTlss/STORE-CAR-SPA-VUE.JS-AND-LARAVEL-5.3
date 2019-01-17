@@ -4,7 +4,7 @@ namespace StorePoll\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use StorePoll\Repositories\AddressRepository;
+use StorePoll\Repositories\Interfaces\AddressRepository;
 use StorePoll\Models\Address;
 use StorePoll\Validators\AddressValidator;
 
