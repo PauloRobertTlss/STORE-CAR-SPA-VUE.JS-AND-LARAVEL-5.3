@@ -43,9 +43,17 @@ export const asyncRouterMap = [
             {
                 path: '/offers',
                 components:{default: fetchProductsList},
-                name: 'fetchProductsList',
+                name: 'fetchProductsOffersList',
                 meta: {
                     title: 'offers',
+                    icon: 'coupon'
+                }
+            },{
+                path: '/all',
+                components:{default: fetchProductsList},
+                name: 'fetchProductsList',
+                meta: {
+                    title: 'search',
                     icon: 'shopping-online'
                 }
             },
