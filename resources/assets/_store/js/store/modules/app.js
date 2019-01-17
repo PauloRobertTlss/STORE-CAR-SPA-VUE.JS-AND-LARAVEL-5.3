@@ -7,7 +7,8 @@ const app = {
       withoutAnimation: false
     },
     device: 'desktop',
-    language: Cookies.get('language') || 'br'
+    language: Cookies.get('language') || 'br',
+      avatar: 'http://apeppers.com.br/builder/adminbuilder/your-custom-admin/assets/images/avatars/avatar5_big.png'
   },
   mutations: {
     TOGGLE_SIDEBAR: state => {
