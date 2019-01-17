@@ -5,18 +5,19 @@ Vue.use(Router);
 
 /* Layout */
 import Layout from '../views/layout/Layout'
-import dashboard from '../views/home/index'
+import home from '../views/home/index'
+import fetchProductsList from '../views/product-offer/list'
 
 export const constantRouterMap = [
     {
         path: '',
         component: Layout,
-        redirect: 'dashboard',
+        redirect: 'home',
         children: [{
-            path: 'dashboard',
-            component: dashboard,
-            name: 'dashboard',
-            meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
+            path: 'home',
+            component: home,
+            name: 'home',
+            meta: { title: 'home', icon: 'home', noCache: true }
         }]
     }
 ];
@@ -51,7 +52,7 @@ export const asyncRouterMap = [
             },
             {
                 path: '/products/:id/details',
-                components:{default: productShow},
+                components:{default: fetchProductsList},
                 name: 'productShow',
                 meta: {
                     title: 'details',
@@ -64,19 +65,5 @@ export const asyncRouterMap = [
                 hidden: true
             }]
     },
-    {
-        path: '/error',
-        component: Layout,
-        redirect: 'noredirect',
-        name: 'errorPages',
-        meta: {
-            title: 'errorPages',
-            icon: '404'
-        },
-        children: [
-            { path: '401', component: errorPage401, name: 'page401', meta: { title: 'page401', noCache: true }},
-            { path: '404', component: errorPage404, name: 'page404', meta: { title: 'page404', noCache: true }}
-        ]
-    },
-    { path: '*', redirect: '/404', hidden: true }
+    { path: '*', redirect: '/home', hidden: true }
 ];
