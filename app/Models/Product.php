@@ -20,6 +20,6 @@ class Product extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = ['id','name','description','price'];
+    protected $fillable = ['id','name','description','price','image_path'];
 
 }
