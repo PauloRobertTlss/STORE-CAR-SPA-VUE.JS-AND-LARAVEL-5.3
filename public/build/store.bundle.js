@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "40069569082f0478c48d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1314ef76a0978a4810a8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -2787,11 +2787,6 @@ var padding = 15; // tag's padding
   methods: {
     toggleSideBar: function toggleSideBar() {
       this.$store.dispatch('toggleSideBar');
-    },
-    logout: function logout() {
-      this.$store.dispatch('LogOut').then(function () {
-        location.reload(); // In order to re-instantiate the vue-router object to avoid bugs
-      });
     }
   }
 });
@@ -90611,15 +90606,26 @@ var i18n = new __WEBPACK_IMPORTED_MODULE_2_vue_i18n__["a" /* default */]({
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router__ = __webpack_require__("./resources/assets/_store/js/router/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__("./node_modules/babel-runtime/helpers/extends.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router__ = __webpack_require__("./resources/assets/_store/js/router/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__("./resources/assets/_store/js/store/index.js");
 
 
-__WEBPACK_IMPORTED_MODULE_0__router__["c" /* default */].beforeEach(function (to, from, next) {
-   next();
+
+
+__WEBPACK_IMPORTED_MODULE_1__router__["c" /* default */].beforeEach(function (to, from, next) {
+
+    __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch('GenerateRoutes', {}).then(function () {
+        // roles
+        __WEBPACK_IMPORTED_MODULE_1__router__["c" /* default */].addRoutes(__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].getters.addRouters); //
+        next(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, to, { replace: true })); //
+    });
+    next();
 });
 
-__WEBPACK_IMPORTED_MODULE_0__router__["c" /* default */].afterEach(function () {
-   // finish progress bar
+__WEBPACK_IMPORTED_MODULE_1__router__["c" /* default */].afterEach(function () {
+    // finish progress bar
 });
 
 /***/ }),
