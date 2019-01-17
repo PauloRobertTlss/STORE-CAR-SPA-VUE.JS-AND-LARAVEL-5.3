@@ -1,6 +1,7 @@
 export default {
     route: {
-        i18n: 'I18n'
+        i18n: 'I18n',
+        'home':'Home'
     },
     navbar: {
         products: 'ofertas'

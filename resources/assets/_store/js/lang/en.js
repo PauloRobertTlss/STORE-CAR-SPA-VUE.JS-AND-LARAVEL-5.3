@@ -1,15 +1,13 @@
 export default {
   route: {
-    i18n: 'I18n'
+    i18n: 'I18n',
+      home:'Home',
+      dashboard: 'Home'
   },
   navbar: {
-    logOut: 'Log Out',
-    dashboard: 'Dashboard',
-    github: 'Github',
-    screenfull: 'screenfull',
-    theme: 'theme'
-  },
+      products: 'offers',
 
+  },
   tagsView: {
     close: 'Close',
     closeOthers: 'Close Others',
