@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "dcb7728ab8e60bcd16f1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "49979e35539908f693f7"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -90668,11 +90668,13 @@ var i18n = new __WEBPACK_IMPORTED_MODULE_2_vue_i18n__["a" /* default */]({
 
 __WEBPACK_IMPORTED_MODULE_1__router__["c" /* default */].beforeEach(function (to, from, next) {
 
-    __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch('GenerateRoutes', {}).then(function () {
-        // roles
-        __WEBPACK_IMPORTED_MODULE_1__router__["c" /* default */].addRoutes(__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].getters.addRouters); //
-        next(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, to, { replace: true })); //
-    });
+    if (!__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].getters.permission_routers) {
+        __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].dispatch('GenerateRoutes', {}).then(function () {
+            // roles
+            __WEBPACK_IMPORTED_MODULE_1__router__["c" /* default */].addRoutes(__WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */].getters.addRouters); //
+            next(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, to, { replace: true })); //
+        });
+    }
     next();
 });
 
