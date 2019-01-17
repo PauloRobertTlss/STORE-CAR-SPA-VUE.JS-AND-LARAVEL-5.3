@@ -4,6 +4,7 @@ namespace StoreTI\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
+use StoreTI\Presenters\ProductPresenter;
 use StoreTI\Repositories\Interfaces\ProductRepository;
 use StoreTI\Models\Product;
 use StoreTI\Validators\ProductValidator;
@@ -34,5 +35,10 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-    
+
+    public function presenter()
+    {
+      return ProductPresenter::class;
+    }
+
 }
