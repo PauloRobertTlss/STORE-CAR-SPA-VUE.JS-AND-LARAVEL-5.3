@@ -12,7 +12,6 @@ class ProductTableSeeder extends Seeder
     public function run()
     {
         $repository = app(StoreTI\Repositories\Interfaces\ProductRepository::class);
-        $categoryRepository = app(StoreTI\Repositories\Interfaces\CategoryRepository::class);
 
         foreach ($this->getData() as $m) {
             $tags = $m['tags'];
@@ -21,7 +20,8 @@ class ProductTableSeeder extends Seeder
             $m = array_except($m,'categories');
 
                 if(!isset($m['image_path'])){
-                    $i = rand(1, 10);
+                    //Definir uma imagem aleatoria
+                    $i = rand(1, 10); // limite 10;
                     $m['image_path'] = "https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/not$i.png";
                 }
 
@@ -42,21 +42,25 @@ class ProductTableSeeder extends Seeder
 
     private function getData(){
         return [
-            ['name'=>'ASUS  1015CX ATOM N2600 1 GB 10.1"','description'=>'Card Reader,WIFI HDD 320 GB operacional DOS','price'=>15000,'categories'=>[['category_id'=>1]],'tags'=>[
+            ['image_path'=>'https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/asus1.png',
+                'name'=>'ASUS  1015CX ATOM N2600 1 GB 10.1"','description'=>'Card Reader,WIFI HDD 320 GB operacional DOS','price'=>15000,'categories'=>[['category_id'=>1]],'tags'=>[
                 ['title'=> 'DOS'],
                 ['title'=> '1GB']
             ]],
-            ['name'=>'ASUS R051cx ATOM N2600 1 GB 10.1"','description'=>'Bluetooth ,WIFI,HDMI HDD 320 GB operacional WIN 7','price'=>16700,'categories'=>[['category_id'=>1]],'tags'=>[
+            ['image_path'=>'https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/asus2.png',
+                'name'=>'ASUS R051cx ATOM N2600 1 GB 10.1"','description'=>'Bluetooth ,WIFI,HDMI HDD 320 GB operacional WIN 7','price'=>16700,'categories'=>[['category_id'=>1]],'tags'=>[
                 ['title'=> 'WIN 7'],
                 ['title'=> '1GB'],
                 ['title'=> 'Bluetooth']
             ]],
-            ['name'=>'ACER A0D270 ATOM N2600 2 GB 10.1"','description'=>'Bluetooth ,WIFI,HDMI HDD 320 GB operacional DOS','price'=>16300,'categories'=>[['category_id'=>1]],'tags'=>[
+            ['image_path'=>'https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/acer1.png',
+                'name'=>'ACER A0D270 ATOM N2600 2 GB 10.1"','description'=>'Bluetooth ,WIFI,HDMI HDD 320 GB operacional DOS','price'=>16300,'categories'=>[['category_id'=>1]],'tags'=>[
                 ['title'=> 'DOS'],
                 ['title'=> 'Bluetooth'],
                 ['title'=> '2GB']
             ]],
-            ['name'=>'ACER A0D270 ATOM N2600 2 GB 10.1"','description'=>'Bluetooth ,WIFI,HDMI HDD 320 GB operacional WIN 7','price'=>17500,'categories'=>[['category_id'=>1]],'tags'=>[
+            ['image_path'=>'https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/ace2.png',
+                'name'=>'ACER A0D270 ATOM N2600 2 GB 10.1"','description'=>'Bluetooth ,WIFI,HDMI HDD 320 GB operacional WIN 7','price'=>17500,'categories'=>[['category_id'=>1]],'tags'=>[
                 ['title'=> 'WIN 7'],
                 ['title'=> 'Bluetooth'],
                 ['title'=> '2GB']
@@ -93,7 +97,8 @@ class ProductTableSeeder extends Seeder
                 ['title'=> 'HDMI'],
                 ['title'=> '2GB']
             ]],
-            ['name'=>'ASUS K53SM-SX010D Core i5 4 GB 15.6"','description'=>'BT/Wf/WC/CR/2GB GT 630 HDD 750 GB operacional DOS','price'=>40500,'categories'=>[['category_id'=>1]],'tags'=>[
+            ['image_path'=>'https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/asus2.png',
+                'name'=>'ASUS K53SM-SX010D Core i5 4 GB 15.6"','description'=>'BT/Wf/WC/CR/2GB GT 630 HDD 750 GB operacional DOS','price'=>40500,'categories'=>[['category_id'=>1]],'tags'=>[
                 ['title'=> 'DOS'],
                 ['title'=> 'Bluetooth'],
                 ['title'=> 'Camera'],
@@ -112,7 +117,8 @@ class ProductTableSeeder extends Seeder
                 ['title'=> 'Placa Video']
 
             ]],
-            ['name'=>'ASUS K55VM CORE i7 8 GB 15.6"','description'=>'BT/Wf/WC/CR/2GB GT 630 HDD 1 TB operacional DOS','price'=>52500,'categories'=>[['category_id'=>1],['category_id'=>14]],'tags'=>[
+            ['image_path'=>'https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/asus1.png',
+                'name'=>'ASUS K55VM CORE i7 8 GB 15.6"','description'=>'BT/Wf/WC/CR/2GB GT 630 HDD 1 TB operacional DOS','price'=>52500,'categories'=>[['category_id'=>1],['category_id'=>14]],'tags'=>[
                 ['title'=> 'DOS'],
                 ['title'=> 'Bluetooth'],
                 ['title'=> 'Camera'],
@@ -248,7 +254,8 @@ class ProductTableSeeder extends Seeder
                 ['title'=> 'Placa de Video']
 
             ]],
-            ['name'=>'DELL INSP 14 corei3  2 GB 14.1"','description'=>'BT/WIFI/WC/CR HDD 500 GB operacional DOS','price'=>30750,'categories'=>[['category_id'=>1]],'tags'=>[
+            ['image_path'=>'https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/dell2.png',
+                'name'=>'DELL INSP 14 corei3  2 GB 14.1"','description'=>'BT/WIFI/WC/CR HDD 500 GB operacional DOS','price'=>30750,'categories'=>[['category_id'=>1]],'tags'=>[
                 ['title'=> 'WIN 7'],
                 ['title'=> 'Bluetooth'],
                 ['title'=> 'Camera'],
@@ -269,7 +276,8 @@ class ProductTableSeeder extends Seeder
                 ['title'=> '2GB'],
                 ['title'=> 'i3']
             ]],
-            ['name'=>'DELL XPS 15 Core i7 2nd Gen 4 GB 15.6"','description'=>'BT/Wifi/1GB ATI HDD 500 GB operacional Win 7','price'=>54500,'categories'=>[['category_id'=>1]],'tags'=>[
+            ['image_path'=>'https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/dell1.png',
+                'name'=>'DELL XPS 15 Core i7 2nd Gen 4 GB 15.6"','description'=>'BT/Wifi/1GB ATI HDD 500 GB operacional Win 7','price'=>54500,'categories'=>[['category_id'=>1]],'tags'=>[
                 ['title'=> 'WIN 7'],
                 ['title'=> 'Bluetooth'],
                 ['title'=> 'Camera'],
@@ -373,7 +381,8 @@ class ProductTableSeeder extends Seeder
                 ['title'=> 'i5'],
                 ['title'=> 'SSD']
             ]],
-            ['name'=>'SAMSUNG  NP 300E5C-A05IN Dual Core  (1.60GHz) 2 GB 15.6"','description'=>'Cam, BT , Grey Black HDD 320 GB operacional WIN 7','price'=>22000,'categories'=>[['category_id'=>1]],'tags'=>[
+            ['image_path'=>'https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/sansung1.png',
+                'name'=>'SAMSUNG  NP 300E5C-A05IN Dual Core  (1.60GHz) 2 GB 15.6"','description'=>'Cam, BT , Grey Black HDD 320 GB operacional WIN 7','price'=>22000,'categories'=>[['category_id'=>1]],'tags'=>[
                 ['title'=> 'WIN 7'],
                 ['title'=> 'Bluetooth'],
                 ['title'=> 'Camera'],
@@ -397,7 +406,8 @@ class ProductTableSeeder extends Seeder
                 ['title'=> 'i3'],
                 ['title'=> 'Cinza']
             ]],
-            ['name'=>'SAMSUNG  NP300 E5X- A01IN Core i5 3rd Gen 4 GB 15.6"','description'=>'Cam, BT , Grey Black HDD 500 GB operacional DOS','price'=>34000,'categories'=>[['category_id'=>1]],'tags'=>[
+            ['image_path'=>'https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/sansung1.png',
+                'name'=>'SAMSUNG  NP300 E5X- A01IN Core i5 3rd Gen 4 GB 15.6"','description'=>'Cam, BT , Grey Black HDD 500 GB operacional DOS','price'=>34000,'categories'=>[['category_id'=>1]],'tags'=>[
                 ['title'=> 'DOS'],
                 ['title'=> 'Bluetooth'],
                 ['title'=> 'Camera'],
@@ -422,7 +432,8 @@ class ProductTableSeeder extends Seeder
                 ['title'=> '1TB'],
                 ['title'=> 'Preto']
             ]],
-            ['name'=>'SAMSUNG NP 550 P5C S02 core i7 3rd gen  8 GB 15,6','description'=>'2GB GR , BT, Cam, Grey Black(Blue Ray) HDD 1 TB operacional WIN7HP','price'=>59500,'categories'=>[['category_id'=>1],['category_id'=>14]],'tags'=>[
+            ['image_path'=>'https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/sansung1.png',
+                'name'=>'SAMSUNG NP 550 P5C S02 core i7 3rd gen  8 GB 15,6','description'=>'2GB GR , BT, Cam, Grey Black(Blue Ray) HDD 1 TB operacional WIN7HP','price'=>59500,'categories'=>[['category_id'=>1],['category_id'=>14]],'tags'=>[
                 ['title'=> 'WIN 7'],
                 ['title'=> 'Bluetooth'],
                 ['title'=> 'Camera'],
