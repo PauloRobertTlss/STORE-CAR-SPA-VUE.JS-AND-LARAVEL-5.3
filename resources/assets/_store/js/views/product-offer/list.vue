@@ -37,7 +37,8 @@
         name: 'offersList',
         data() {
             return {
-                search:''
+                search:'',
+                scrollPercent:0
             }
         },
         computed:{
@@ -45,13 +46,13 @@
                 return this.$store.state.product.products;
             }
         },
-        created() {
-            this.getList()
-        },
         watch: {
             search(after, before) {
                 this.$store.commit('SET_PRODUCT_FILTER', after);
                 this.$store.dispatch('queryProducts')
+            },
+            products(after,before){
+                console.log('news products')
             }
         },
         methods: {
@@ -60,12 +61,34 @@
                 this.$store.dispatch('queryProducts').then(()=>{
 
                 });
+            },
+            handleScroll(e){
+                var s = $(window).scrollTop(),
+                    d = $(document).height(),
+                    c = $(window).height();
+
+                var scrollcurrent = (s / (d - c)) * 100;
+
+                if(parseFloat(scrollcurrent) > 70 && scrollcurrent > this.scrollPercent){
+                    this.$store.commit('SET_PRODUCT_NEXT_PAGE');
+                    this.$store.dispatch('unionProducts');
+                }
+                this.scrollPercent = scrollcurrent;
+
+
+                console.log('event scroll', this.scrollPercent, 'valid [',parseFloat(this.scrollPercent) > 70,']')
             }
 
         },
         mounted(){
             this.$store.commit('SET_PRODUCT_LIMIT',12);
             this.getList()
+        },
+        created () {
+            window.addEventListener('scroll', this.handleScroll);
+        },
+        destroyed () {
+            window.removeEventListener('scroll', this.handleScroll);
         }
     }
 </script>
