@@ -8,6 +8,7 @@ const getters = {
     cachedViews: state => state.tagsView.cachedViews,
     addRouters: state => state.permission.addRouters,
     errorLogs: state => state.errorLog.logs,
-    permission_routers: state => state.permission.routers
+    permission_routers: state => state.permission.routers,
+    car_shopping_itens: state => state.sale.sale.lines.length
 };
 export default getters
