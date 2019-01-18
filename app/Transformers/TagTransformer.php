@@ -23,11 +23,8 @@ class TagTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
+            'title'         => (String) $model->title
 
-            /* place your other model properties here */
-
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
         ];
     }
 }
