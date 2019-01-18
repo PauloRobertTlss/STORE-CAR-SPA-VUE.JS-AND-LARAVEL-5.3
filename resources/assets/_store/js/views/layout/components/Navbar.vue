@@ -7,6 +7,7 @@
       <input-search></input-search>
     </div>
     <div class="right-menu">
+
       <!--<error-log class="errLog-container right-menu-item"></error-log>-->
       <lang-select class="international right-menu-item"></lang-select>
 
@@ -14,6 +15,21 @@
         <div class="avatar-wrapper">
           <img class="user-avatar" :src="avatar+'?imageView2/1/w/80/h/80'">
           <i class="el-icon-caret-bottom"></i>
+          <svg viewBox="0 0 36 36"
+               class="badge" v-bind:class="{'show':sumUnits>0}">
+            <circle
+                    cx="50%"
+                    cy="50%"
+                    r="50%"/>
+
+            <text
+                    x="50%"
+                    y="55%"
+                    text-anchor="middle"
+                    alignment-baseline="middle">
+              {{sumUnits}}
+            </text>
+          </svg>
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link to="/">
@@ -52,7 +68,9 @@
             ...mapGetters([
                 'sidebar',
                 'name',
-                'avatar'
+                'avatar',
+                'car_shopping_itens',
+                'sumUnits'
             ]),
         },
         methods: {
@@ -96,6 +114,29 @@
       &:focus{
         outline: none;
       }
+      .badge {
+        /* Set to any width you like */
+        width: 1.6vw;
+        fill: #2ECC71;
+        position: absolute;
+        z-index: 9999;
+        top: 0;
+        left: 30px;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        display: none;
+        &.show{
+          display: inherit;
+          -webkit-animation-name: bounceIn;
+          animation-name: bounceIn;
+        }
+      }
+      .badge text {
+        font-size: 18px;
+        font-weight: 300;
+        font-feature-settings: 'lnum';
+        fill: white;
+      }
       .right-menu-item {
         display: inline-block;
         margin: 0 8px;
@@ -130,6 +171,87 @@
           }
         }
       }
+    }
+  }
+
+
+  @-webkit-keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+      transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+      -webkit-transform: scale3d(.9, .9, .9);
+      transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d(1.03, 1.03, 1.03);
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+      -webkit-transform: scale3d(.97, .97, .97);
+      transform: scale3d(.97, .97, .97);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(.3, .3, .3);
+      transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1);
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+      -webkit-transform: scale3d(.9, .9, .9);
+      transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d(1.03, 1.03, 1.03);
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+      -webkit-transform: scale3d(.97, .97, .97);
+      transform: scale3d(.97, .97, .97);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
     }
   }
 </style>
