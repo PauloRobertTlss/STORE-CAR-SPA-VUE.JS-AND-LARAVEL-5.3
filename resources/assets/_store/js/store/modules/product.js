@@ -17,7 +17,9 @@ const product = {
             }
         },
         SET_PRODUCTS: (state, data) => {
-            state.products = data
+            if(data.length) {
+                state.products = data
+            }
         },
         ONION_PRODUCTS: (state, data) => {
             console.log('befone products ['+state.products.length+']')
