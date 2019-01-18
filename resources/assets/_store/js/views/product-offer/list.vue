@@ -37,7 +37,6 @@
         name: 'offersList',
         data() {
             return {
-                search:'',
                 scrollPercent:0
             }
         },
@@ -46,17 +45,9 @@
                 return this.$store.state.product.products;
             }
         },
-        watch: {
-            search(after, before) {
-                this.$store.commit('SET_PRODUCT_FILTER', after);
-                this.$store.dispatch('queryProducts')
-            },
-            products(after,before){
-                console.log('news products')
-            }
-        },
         methods: {
             getList() {
+                this.$store.commit('SET_PRODUCT_PAGE',1);
                 this.$store.commit('SET_PRODUCT_FILTER','');
                 this.$store.dispatch('queryProducts').then(()=>{
 
@@ -74,9 +65,6 @@
                     this.$store.dispatch('unionProducts');
                 }
                 this.scrollPercent = scrollcurrent;
-
-
-                console.log('event scroll', this.scrollPercent, 'valid [',parseFloat(this.scrollPercent) > 70,']')
             }
 
         },
