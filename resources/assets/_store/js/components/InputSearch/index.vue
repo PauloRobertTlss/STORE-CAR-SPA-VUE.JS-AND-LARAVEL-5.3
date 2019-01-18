@@ -1,24 +1,43 @@
 <template>
 
-     <div class="container" v-bind:class="{'active':model.length}">
-            <span id="placeholder" class="placeholder" >Encontre rápido...</span>
-            <input type="text" v-model="search">
-            <svg-icon icon-class="shopping-online"></svg-icon>
+    <div class="container" v-bind:class="{'active': search.length}">
+        <span id="placeholder" class="placeholder" >Encontre rápido...</span>
+        <input type="text" v-model="search">
+        <svg-icon icon-class="shopping-online"></svg-icon>
     </div>
-
 </template>
 
 <script>
 
-export default {
-  name: 'searchInput',
-  props: {
-      search:{
-          type: String,
-          required: true
-      }
+    export default {
+        name: 'searchInput',
+        data() {
+            return{
+                search:''
+            }
+        },
+        watch:{
+            search(after,before)
+            {
+                this.moverOffers()
+
+
+                if(after.length > 1) {
+                    this.$store.commit('SET_PRODUCT_CURRENT_PAGE', 0);
+                    this.$store.commit('SET_PRODUCT_FILTER', after);
+                    this.$store.dispatch('queryProducts')
+                }
+            }
+        },
+        methods:{
+            moverOffers(){
+                const route = this.$route.name;
+                if(!route.toLowerCase().includes('productsoffers')){
+                    this.$router.push({name:'fetchProductsOffersList'})
+                }
+            }
+        }
     }
-}
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
