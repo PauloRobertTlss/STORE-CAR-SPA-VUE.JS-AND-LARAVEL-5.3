@@ -7,6 +7,7 @@ Vue.use(Router);
 import Layout from '../views/layout/Layout'
 import home from '../views/home/index'
 import fetchProductsList from '../views/product-offer/list'
+import productsDetails from '../views/product-offer/details'
 
 export const constantRouterMap = [
     {
@@ -61,7 +62,7 @@ export const asyncRouterMap = [
             },
             {
                 path: '/products/:id/details',
-                components:{default: fetchProductsList},
+                components:{default: productsDetails},
                 name: 'productShow',
                 meta: {
                     title: 'details',
