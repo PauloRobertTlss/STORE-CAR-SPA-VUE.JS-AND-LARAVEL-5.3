@@ -6,7 +6,7 @@ import store from "../index";
 const product = {
     state: {
         IDCurrent: null,
-        product: {name:`Teste`},
+        productCurrent: {name:`Teste`},
         products: [],
         searchOptions: new SearchOptions()
     },
@@ -57,8 +57,10 @@ const product = {
     },
     actions: {
         getProduct({commit,state}){
+            commit('SET_LOADING',true);
             return getInfo(state.IDCurrent).then(response => {
                 state.productCurrent = response.data.data
+                commit('SET_LOADING',false);
                 return response
             }).catch((e) => {
 
