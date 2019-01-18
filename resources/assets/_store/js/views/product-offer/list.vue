@@ -1,16 +1,31 @@
 <template>
     <div class="app-container">
         <el-row :gutter="24">
-            <el-col class="mb-md" :xl="24" :sm="6" :md="6" :lg="4" v-for="(o, index) in products" :key="o.id" >
-                <el-card :body-style="{ padding: '0px' }">
-                    <img :src="o.image_path" class="image" width="260px" height="260px">
+            <el-col :xl="24" :sm="3" :md="3" :lg="3">
+            </el-col>
+            <el-col :xl="24" :sm="18" :md="18" :lg="18" :offset="2">
+                <el-row :gutter="24">
+            <el-col class="mb-md" :xl="24" :sm="8" :md="8" :lg="8" v-for="(o, index) in products" :key="o.id">
+                <a>
+                <el-card shadow="never" :body-style="{ padding: '0px' }">
+                    <img :src="o.image_path" class="image" width="190px" height="190px">
                     <div style="padding: 14px;">
                         <span>{{o.name}}</span>
+                        <span class="productDetails">
+                            <span class="for">
+                                Por: <br><strong>R$ {{o.price}}</strong>
+                            </span>
+                        </span>
                         <div class="bottom clearfix">
                             <el-button type="text" class="button">Operating button</el-button>
                         </div>
                     </div>
                 </el-card>
+                </a>
+                </el-col>
+                </el-row>
+            </el-col>
+            <el-col :xl="24" :sm="3" :md="3" :lg="3">
             </el-col>
         </el-row>
     </div>
@@ -56,12 +71,39 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-.mb{
-    &-md{
-        margin-bottom: 3rem;
+    .el-card{
+        border:none;
+        max-height: 20rem!important;
+        position:relative;
+        img{
+            display: block;
+            border-radius: 2px 2px 0 0;
+            position: relative;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
     }
-    &-lg{
-        margin-bottom: 6rem;
+
+    .mb{
+        &-md{
+            margin-bottom: 3rem;
+        }
+        &-lg{
+            margin-bottom: 6rem;
+        }
     }
-}
+    .productDetails {
+        .for {
+            margin: 2px 0;
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+
+            color: #004a9d;
+
+        }
+    }
 </style>
