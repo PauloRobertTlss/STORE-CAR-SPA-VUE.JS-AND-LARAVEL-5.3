@@ -5,6 +5,7 @@ export default {
       offers:'Offers',
       products:'Products',
       search:'Search',
+      details:'details'
 
   },
   navbar: {

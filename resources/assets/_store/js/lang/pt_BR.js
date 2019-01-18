@@ -4,7 +4,8 @@ export default {
         home:'Home',
         offers:'Ofertas',
         products:'Produtos',
-        search:'Buscar'
+        search:'Buscar',
+        details:'Detalhes'
     },
     navbar: {
         products: 'ofertas'
