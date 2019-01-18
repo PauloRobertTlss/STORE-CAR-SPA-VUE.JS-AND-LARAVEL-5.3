@@ -19,7 +19,7 @@ Route::group(['middleware'=>'cors'], function (){
         ->namespace('Api\V1')
         ->group(function () {
 
-            Route::resource('/products', 'ProductsController',['except' => ['edit', 'create','show']]);
+            Route::resource('/products', 'ProductsController',['except' => ['edit', 'create']]);
             Route::resource('/sales', 'SaleOrdersController',['except' => ['edit', 'create','show']]);
 
 
