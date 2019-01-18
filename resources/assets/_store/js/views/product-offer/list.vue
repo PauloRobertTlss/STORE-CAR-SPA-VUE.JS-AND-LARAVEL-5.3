@@ -6,7 +6,7 @@
             <el-col :xl="24" :sm="18" :md="18" :lg="18" :offset="2">
                 <el-row :gutter="24">
             <el-col class="mb-md" :xl="24" :sm="8" :md="8" :lg="8" v-for="(o, index) in products" :key="o.id">
-                <a>
+                <a @click="info(o)">
                 <el-card shadow="never" :body-style="{ padding: '0px' }">
                     <img :src="o.image_path" class="image" width="190px" height="190px">
                     <div style="padding: 14px;">
@@ -58,16 +58,19 @@
                 var s = $(window).scrollTop(),
                     d = $(document).height(),
                     c = $(window).height();
-
                 var scrollcurrent = (s / (d - c)) * 100;
-
                 if(parseFloat(scrollcurrent) > 70 && scrollcurrent > this.scrollPercent){
                     this.$store.commit('SET_PRODUCT_NEXT_PAGE');
                     this.$store.dispatch('unionProducts');
                 }
                 this.scrollPercent = scrollcurrent;
+            },
+            info(product){
+                this.$store.commit('SET_ID_PRODUCT_CURRENT',product.id);
+                this.$store.dispatch('getProduct').then(r=>{
+                    this.$router.push({ name: 'productShow', params: { id: product.id }})
+                })
             }
-
         },
         mounted(){
             this.$store.commit('SET_PRODUCT_LIMIT',12);
@@ -82,7 +85,7 @@
     }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" lang="scss" scoped>
     .el-card{
         border:none;
         max-height: 20rem!important;
