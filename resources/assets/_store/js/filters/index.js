@@ -22,6 +22,18 @@ export function timeAgo(time) {
   }
   return `time invalid!`
 }
+
+export function numberFormatter(num,isCurrency = false) {
+    let number = 0;
+    if(num !== null && num !== "" && !isNaN(num)){
+        number = isCurrency ? numeral(num).format('$0,0.00') :  numeral(num).format('0,0.00');
+    }
+    return number;
+
+    //let number = numeral(value).value();
+    //return  number ? number : 0;
+
+}
 export function phoneFormat(num) {
     if (num === null ) return;
     var texto = num;
