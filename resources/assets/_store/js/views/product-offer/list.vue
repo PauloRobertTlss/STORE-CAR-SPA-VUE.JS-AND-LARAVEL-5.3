@@ -28,6 +28,7 @@
             <el-col :xl="24" :sm="3" :md="3" :lg="3">
             </el-col>
         </el-row>
+
     </div>
 </template>
 
@@ -47,7 +48,7 @@
         },
         methods: {
             getList() {
-                this.$store.commit('SET_PRODUCT_PAGE',1);
+                this.$store.commit('SET_PRODUCT_CURRENT_PAGE',0);
                 this.$store.commit('SET_PRODUCT_FILTER','');
                 this.$store.dispatch('queryProducts').then(()=>{
 
