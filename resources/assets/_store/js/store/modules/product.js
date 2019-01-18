@@ -2,6 +2,7 @@
 import { fetchList,getInfo} from '_@/js/api/products'
 import SearchOptions from '_@/js/services/search-options';
 import _ from 'lodash'
+import store from "../index";
 const product = {
     state: {
         IDCurrent: null,
@@ -66,7 +67,7 @@ const product = {
         queryProducts({commit,state}) {
             let searchOptions = state.searchOptions;
 
-
+            commit('SET_LOADING',true);
                 return new Promise((resolve, reject) => {
                     return fetchList(searchOptions.createOptions(),
                         {
@@ -83,6 +84,7 @@ const product = {
                     ).then(response => {
                         commit('SET_PRODUCTS', response.data.data);
                         commit('SET_PRODUCT_PAGINATION', response.data.meta.pagination);
+                        commit('SET_LOADING',false);
                         resolve(response);
                     });
                 });
@@ -107,11 +109,15 @@ const product = {
 
                     commit('ONION_PRODUCTS', response.data.data);
                     commit('SET_PRODUCT_PAGINATION', response.data.meta.pagination);
+                    commit('SET_LOADING',false);
                     resolve(response);
                 });
             });
+            }else{
+                console.log('já carregamos todos os produtos desta pagina' ,state.searchOptions.pagination.current_page)
+                commit('SET_PRODUCT_CURRENT_PAGE',state.searchOptions.pagination.current_page--)
             }
-            console.log('já carregamos todos os produtos desta pagina' ,state.searchOptions.pagination.current_page)
+
         }
     }
 };
