@@ -59,7 +59,7 @@ export default {
       return false
     },
     isActive(route) {
-      return route.path === this.$route.path
+      return route.name === this.$route.name
     },
     addViewTags() {
       const route = this.generateRoute();
@@ -72,7 +72,7 @@ export default {
       const tags = this.$refs.tag;
       this.$nextTick(() => {
         for (const tag of tags) {
-          if (tag.to.path === this.$route.path) {
+          if (tag.to.name === this.$route.name) {
             this.$refs.scrollPane.moveToTarget(tag.$el);
             break
           }
