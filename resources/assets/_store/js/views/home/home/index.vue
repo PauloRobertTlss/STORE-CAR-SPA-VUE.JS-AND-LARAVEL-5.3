@@ -13,10 +13,8 @@
     </div>
   </div>
 </template>
-
 <script>
 import PanThumb from '_@/js/components/PanThumb'
-
 export default {
   name: 'home-client',
   components: { PanThumb },
