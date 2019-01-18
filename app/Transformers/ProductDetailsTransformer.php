@@ -6,11 +6,11 @@ use League\Fractal\TransformerAbstract;
 use StoreTI\Models\Product;
 
 /**
- * Class ProductTransformer.
+ * Class ProductDetailsTransformer.
  *
  * @package namespace StoreTI\Transformers;
  */
-class ProductTransformer extends TransformerAbstract
+class ProductDetailsTransformer extends TransformerAbstract
 {
 
     protected $defaultIncludes = ['tags','categories'];
