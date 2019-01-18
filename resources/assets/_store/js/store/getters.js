@@ -1,4 +1,5 @@
 const getters = {
+    loading: state => state.app.loading,
     sidebar: state => state.app.sidebar,
     language: state => state.app.language,
     device: state => state.app.device,
