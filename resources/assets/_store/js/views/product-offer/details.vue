@@ -22,14 +22,10 @@
     export default {
         name: 'productDetails',
         components:{TransactionTable,BoxCard},
-        data() {
-            return {
-                currentRole: 'adminDashboard'
-            }
-        },
         computed: {
             ...mapGetters([
-                'roles'
+                'car_shopping_itens',
+                'sumUnits'
             ]),
             productCurrent(){
                 return this.$store.state.product.productCurrent
