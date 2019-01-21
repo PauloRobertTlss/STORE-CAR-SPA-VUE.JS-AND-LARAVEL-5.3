@@ -16,5 +16,16 @@ export default {
     close: 'Close',
     closeOthers: 'Close Others',
     closeAll: 'Close All'
-  }
+  },
+    shopping_car: {
+        name: 'Name',
+        contact: 'Phone',
+        contacts: 'Contacts',
+        email: 'Email',
+        route: 'Street',
+        number: 'Number',
+        postcode: 'Postcode',
+        complement:'Complement',
+        reference_point:'Reference'
+    }
 }

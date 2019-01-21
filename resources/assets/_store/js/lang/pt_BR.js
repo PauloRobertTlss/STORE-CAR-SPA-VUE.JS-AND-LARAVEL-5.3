@@ -5,14 +5,31 @@ export default {
         offers:'Ofertas',
         products:'Produtos',
         search:'Buscar',
-        details:'Detalhes'
+        details:'Detalhes',
+        sale:'Caixa',
+        delivery: 'Entrega'
     },
     navbar: {
-        products: 'ofertas'
+        products: 'Mais ofertas',
+        delivery: 'Entrega'
     },
     tagsView: {
         close: 'Close',
         closeOthers: 'Close Others',
         closeAll: 'Close All'
+    },
+    shopping_car: {
+        name: 'Nome',
+        contact: 'Telefone',
+        contact_placeholder: 'celular DD9.........',
+        contacts: 'Contatos',
+        email: 'Email',
+        route: 'Endereço',
+        number: 'Número',
+        postcode: 'CEP',
+        complement:'Complemento; Torre; Número Apart.',
+        reference_point:'P.Referência',
+        neighborhood: 'Bairro',
+        city: 'Cidade'
     }
 }
