@@ -20,6 +20,10 @@ class Contact extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = ['id',''];
+    protected $fillable = ['id','source_id','source_type','contact'];
 
+    public function contactable()
+    {
+        return $this->morphTo('source');
+    }
 }
