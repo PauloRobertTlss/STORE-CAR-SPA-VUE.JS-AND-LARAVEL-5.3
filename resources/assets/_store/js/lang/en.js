@@ -27,5 +27,8 @@ export default {
         postcode: 'Postcode',
         complement:'Complement',
         reference_point:'Reference'
+    },
+    offers: {
+        categories: 'Categories'
     }
 }

@@ -31,5 +31,8 @@ export default {
         reference_point:'P.Referência',
         neighborhood: 'Bairro',
         city: 'Cidade'
+    },
+    offers: {
+        categories: 'Categorias'
     }
 }
