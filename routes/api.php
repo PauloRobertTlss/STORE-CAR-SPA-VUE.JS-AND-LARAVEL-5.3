@@ -22,6 +22,6 @@ Route::group(['middleware'=>'cors'], function (){
 
             Route::resource('/products', 'ProductsController',['except' => ['edit', 'create']]);
             Route::resource('/categories', 'CategoriesController',['except' => ['edit', 'create','show']]);
-            Route::resource('/sales', 'SaleOrdersController',['except' => ['edit', 'create','show']]);
+            Route::resource('/sale_orders', 'SaleOrdersController',['except' => ['edit', 'create','show']]);
         });
 });

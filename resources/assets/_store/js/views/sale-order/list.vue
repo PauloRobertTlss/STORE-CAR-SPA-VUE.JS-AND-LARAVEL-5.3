@@ -59,15 +59,18 @@
             ]),
             sales(){
                 return this.$store.state.order.entities
-            },
-            sumSale(){
-                return this.$store.getters.sumSale
             }
         },
         methods:{
-
+          namespace(){
+              return 'order';
+          },
+            getList(){
+              this.$store.dispatch(`${this.namespace()}/query`)
+            }
         },
-        created() {
+        mounted() {
+            this.getList()
         }
     }
 </script>

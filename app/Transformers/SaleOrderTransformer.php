@@ -12,6 +12,8 @@ use StoreTI\Models\SaleOrder;
  */
 class SaleOrderTransformer extends TransformerAbstract
 {
+
+    protected $defaultIncludes = ['lines','customer','address'];
     /**
      * Transform the SaleOrder entity.
      *
@@ -24,10 +26,33 @@ class SaleOrderTransformer extends TransformerAbstract
         return [
             'id'         => (int) $model->id,
 
-            /* place your other model properties here */
-
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'created_at' => $model->created_at->format('Y-mm-d H:i:s')
         ];
     }
+
+    public function includeLines(SaleOrder $model){
+        return $this->collection($model->lines, new SaleLineTransformer());
+    }
+
+    public function includeCustomer(SaleOrder $model){
+
+        if($model->customer_id !== null) {
+            $tranf = new CustomerTransformer();
+            $tranf->setDefaultIncludes(['contacts']);
+            return $this->item($model->customer, $tranf);
+        }
+        return null;
+    }
+
+    public function includeAddress(SaleOrder $model){
+        if($model->address_id !== null) {
+            $tranf = new AddressTransformer();
+            $tranf->setDefaultIncludes([]);
+            return $this->item($model->address, $tranf);
+        }
+        return null;
+    }
+
+
+
 }

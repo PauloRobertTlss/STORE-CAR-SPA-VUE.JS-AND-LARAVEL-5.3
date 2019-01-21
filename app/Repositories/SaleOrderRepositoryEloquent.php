@@ -4,6 +4,7 @@ namespace StoreTI\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
+use StoreTI\Presenters\SaleOrderPresenter;
 use StoreTI\Repositories\Interfaces\SaleOrderRepository;
 use StoreTI\Models\SaleOrder;
 use StoreTI\Validators\SaleOrderValidator;
@@ -34,5 +35,10 @@ class SaleOrderRepositoryEloquent extends BaseRepository implements SaleOrderRep
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-    
+
+    public function presenter()
+    {
+       return SaleOrderPresenter::class;
+    }
+
 }

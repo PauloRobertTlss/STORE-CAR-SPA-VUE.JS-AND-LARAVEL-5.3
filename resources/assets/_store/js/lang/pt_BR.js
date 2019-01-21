@@ -7,7 +7,9 @@ export default {
         search:'Buscar',
         details:'Detalhes',
         sale:'Caixa',
-        delivery: 'Entrega'
+        sales:'Vendas',
+        delivery: 'Meu Pedido',
+        all: 'Geral'
     },
     navbar: {
         products: 'Mais ofertas',

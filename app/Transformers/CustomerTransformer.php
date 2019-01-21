@@ -12,6 +12,8 @@ use StoreTI\Models\Customer;
  */
 class CustomerTransformer extends TransformerAbstract
 {
+
+    protected $defaultIncludes = ['contacts'];
     /**
      * Transform the Customer entity.
      *
@@ -23,11 +25,12 @@ class CustomerTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
+            'name'         => (string) $model->name
 
-            /* place your other model properties here */
-
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
         ];
+    }
+
+    public function includeContacts(Customer $model){
+        return $this->collection($model->contacts,new ContactTransformer());
     }
 }

@@ -24,7 +24,7 @@ class Customer extends Model implements Transformable
 
     public function contacts()
     {
-        return $this->morphMany(Contact::class, 'contactable')->orderBy('comments.id', 'desc');
+        return $this->morphMany(Contact::class, 'contactable')->orderBy('contacts.id', 'desc');
     }
 
     public function addresses(){

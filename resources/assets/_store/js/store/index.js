@@ -12,9 +12,11 @@ Vue.use(Vuex);
 
 let product = abstractModule();
 let category = abstractModule();
+let order = abstractModule();
 
 product.state.api = 'products';
 category.state.api = 'categories';
+order.state.api = 'sale_orders';
 
 const store = new Vuex.Store({
     modules: {
@@ -24,6 +26,7 @@ const store = new Vuex.Store({
         tagsView,
         product,
         category,
+        order,
         sale
     },
     getters

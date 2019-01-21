@@ -23,7 +23,8 @@ class ContactTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-            'contact'         => (String) $model->contact
+            'contact'         => (String) $model->contact,
+            'type'         => (String) $model->type
         ];
     }
 }

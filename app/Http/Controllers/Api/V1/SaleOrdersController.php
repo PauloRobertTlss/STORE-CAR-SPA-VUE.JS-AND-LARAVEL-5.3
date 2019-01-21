@@ -16,12 +16,25 @@ class SaleOrdersController extends Controller
      * @var SaleOrderServices
      */
     private $services;
+    /**
+     * @var SaleOrderRepository
+     */
+    private $orderRepository;
 
-    public function __construct(SaleOrderServices $orderServices)
+    public function __construct(SaleOrderRepository $orderRepository,SaleOrderServices $orderServices)
     {
         $this->services = $orderServices;
+        $this->orderRepository = $orderRepository;
     }
-    
+
+    public function index(Request $request){
+
+        $limit = $request->query->get('limit',10);
+        $this->orderRepository->pushCriteria(app(RequestCriteria::class));
+        return $this->orderRepository->paginate($limit);
+
+    }
+
 
     public function store(Request $request){
         $data = $request->all();

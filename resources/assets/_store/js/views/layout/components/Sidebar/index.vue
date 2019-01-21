@@ -7,7 +7,7 @@
       :collapse="isCollapse"
       background-color="#302e61"
       text-color="#ffc107"
-      active-text-color="#0bbbd1"
+      active-text-color="#0bd128"
         >
       <sidebar-item v-for="route in permission_routers" :key="route.name" :item="route" :base-path="route.path"></sidebar-item>
     </el-menu>

@@ -20,9 +20,9 @@ class SaleOrder extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = ['id','client_id','address_id'];
+    protected $fillable = ['id','customer_id','address_id'];
 
-    public function client(){
+    public function customer(){
         return $this->belongsTo(Customer::class);
     }
 
