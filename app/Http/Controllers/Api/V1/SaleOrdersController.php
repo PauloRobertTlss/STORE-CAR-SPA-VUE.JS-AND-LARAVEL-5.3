@@ -8,29 +8,24 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use StoreTI\Presenters\ProductDetailsPresenter;
 use StoreTI\Repositories\Interfaces\ProductRepository;
 use StoreTI\Repositories\Interfaces\SaleOrderRepository;
+use StoreTI\Services\SaleOrderServices;
 
 class SaleOrdersController extends Controller
 {
-
-
     /**
-     * @var SaleOrderRepository
+     * @var SaleOrderServices
      */
-    private $orderRepository;
+    private $services;
 
-    public function __construct(SaleOrderRepository $orderRepository)
+    public function __construct(SaleOrderServices $orderServices)
     {
-
-        $this->orderRepository = $orderRepository;
+        $this->services = $orderServices;
     }
     
 
-    
-
     public function store(Request $request){
-
         $data = $request->all();
-        return $this->productRepository->find($id);
+        return $this->services->create($data);
     }
     
 
