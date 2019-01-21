@@ -22,4 +22,9 @@ class Customer extends Model implements Transformable
      */
     protected $fillable = ['id','name'];
 
+    public function contacts()
+    {
+        return $this->morphMany(Contact::class, 'source')->orderBy('comments.id', 'desc');
+    }
+
 }
