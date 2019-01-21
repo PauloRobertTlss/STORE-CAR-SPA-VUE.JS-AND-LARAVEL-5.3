@@ -36,6 +36,9 @@
             <el-dropdown-item>
               {{$t('navbar.products')}}
             </el-dropdown-item>
+            <el-dropdown-item>
+              {{$t('navbar.delivery')}}
+            </el-dropdown-item>
           </router-link>
         </el-dropdown-menu>
       </el-dropdown>
