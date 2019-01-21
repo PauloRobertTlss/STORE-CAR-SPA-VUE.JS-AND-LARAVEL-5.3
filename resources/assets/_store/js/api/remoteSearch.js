@@ -1,9 +1,4 @@
-import request from '@pos/utils/request'
+import request from '_@/js/utils/request'
 
-export function userSearch(name) {
-  return request({
-    url: '/search/user',
-    method: 'get',
-    params: { name }
-  })
-}
+export function buscarCep(query) { return request({ url: '/v1/buscarCep',method: 'get', params: query })}
+
