@@ -58,11 +58,13 @@ class SaleOrderServices
 
     /**
      * @param array $data
+     * @return \Illuminate\Http\JsonResponse
      */
     public function create(array $data)
     {
 
         /*
+         * * - Validação
          * 1 - Cadastrar client
          * 2 - Cadastrar imóvel
          * 3 - Efetivar Pedido de Venda
