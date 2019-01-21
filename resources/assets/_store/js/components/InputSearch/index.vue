@@ -1,7 +1,7 @@
 <template>
 
     <div class="container" v-bind:class="{'active': search.length}">
-        <span id="placeholder" class="placeholder" >Encontre rápido...</span>
+        <span id="placeholder" class="placeholder" >Encontre rápido aqui</span>
         <input type="text" v-model="search">
         <svg-icon icon-class="shopping-online"></svg-icon>
     </div>
