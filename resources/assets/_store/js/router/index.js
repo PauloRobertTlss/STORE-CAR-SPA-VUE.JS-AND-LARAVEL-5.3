@@ -6,7 +6,7 @@ Vue.use(Router);
 /* Layout */
 import Layout from '../views/layout/Layout'
 import home from '../views/home/index'
-import fetchProductsList from '../views/product-offer/list'
+import fetchProductsList from '../views/product-offer/listAbstract'
 import productDetails from '../views/product-offer/details'
 import saleDetails from '../views/shopping-car/details'
 
@@ -52,14 +52,6 @@ export const asyncRouterMap = [
                     title: 'offers',
                     icon: 'coupon'
                 }
-            },{
-                path: '/all',
-                components:{default: fetchProductsList},
-                name: 'fetchProductsList',
-                meta: {
-                    title: 'search',
-                    icon: 'shopping-online'
-                }
             },
             {
                 path: '/products/:id/details',
@@ -77,11 +69,11 @@ export const asyncRouterMap = [
             }]
     },
     {
-        path: '/manageSale',
+        path: '/customerSale',
         component: Layout,
         redirect: '/sale',
         alwaysShow: true, // will always show the root menu
-        name: 'manageSale',
+        name: 'customerSale',
         meta: {
             title: 'sale',
             icon: 'cash-machine'
@@ -93,6 +85,27 @@ export const asyncRouterMap = [
                 name: 'saleShow',
                 meta: {
                     title: 'delivery',
+                    icon: 'trolley',
+                    badge: true
+                }
+            }]
+    },{
+        path: '/manageSale',
+        component: Layout,
+        redirect: '/sale/all',
+        alwaysShow: true, // will always show the root menu
+        name: 'manageSale',
+        meta: {
+            title: 'sale',
+            icon: 'handshake'
+        },
+        children: [
+            {
+                path: '/sale/all',
+                components:{default: saleDetails},
+                name: 'saleShow',
+                meta: {
+                    title: 'all',
                     icon: 'trolley',
                     badge: true
                 }
