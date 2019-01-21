@@ -1,9 +1,10 @@
 
 const formattedLines = (lines,lineCollection = []) =>{
     for(let b of lines){
+        console.log('line ', b)
         let lineNew = {
             units : b.units,
-            product_id : b.product.data.cid
+            product_id : b.id
         };
         lineCollection.push(lineNew);
     }
@@ -14,13 +15,11 @@ export default class {
         this.init();
         Object.assign(this,data);
     }
-
     init(){
         this.is_customer = false;
         this.is_lines = false;
-        this.customer ={name:null};
-        this.contacts = [];
-        this.address = {route:null,number:null,neibohold:null,city:null};
+        this.customer ={name:null,email:'',contact:''};
+        this.address = {route:null,number:null,neighborhood:null,city:null,state:null,complement:null,reference_point:null,postcode:null};
         this.lines = [];
     }
 
@@ -29,7 +28,7 @@ export default class {
             customer: this.customer,
             address: this.address,
             contacts: this.contacts,
-            lines: formattedLines(this.lines.data)
+            lines: formattedLines(this.lines)
         };
         return o;
 
