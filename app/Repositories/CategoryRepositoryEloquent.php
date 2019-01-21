@@ -4,6 +4,7 @@ namespace StoreTI\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
+use StoreTI\Presenters\CategoryPresenter;
 use StoreTI\Repositories\Interfaces\CategoryRepository;
 use StoreTI\Models\Category;
 
@@ -33,5 +34,10 @@ class CategoryRepositoryEloquent extends BaseRepository implements CategoryRepos
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-    
+
+    public function presenter()
+    {
+      return CategoryPresenter::class;
+    }
+
 }
