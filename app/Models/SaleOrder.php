@@ -22,4 +22,15 @@ class SaleOrder extends Model implements Transformable
      */
     protected $fillable = ['id','client_id','address_id'];
 
+    public function client(){
+        return $this->belongsTo(Customer::class);
+    }
+
+    public function address(){
+        return $this->belongsTo(Address::class);
+    }
+
+    public function lines(){
+        return $this->hasMany(SaleLine::class);
+    }
 }

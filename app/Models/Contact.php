@@ -21,9 +21,19 @@ class Contact extends Model implements Transformable
      * @var array
      */
     protected $fillable = ['id','source_id','source_type','contact'];
+    protected $appends = ['type'];
+    public $timestamps = false;
+
+    public function getTypeAttribute()
+    {
+        if (filter_var($this->contact, FILTER_VALIDATE_EMAIL)) {
+            return 'email';
+        }
+        return 'phone';
+    }
 
     public function contactable()
     {
-        return $this->morphTo('source');
+        return $this->morphTo('contactable');
     }
 }

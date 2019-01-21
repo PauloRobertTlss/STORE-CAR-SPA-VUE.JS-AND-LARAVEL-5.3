@@ -20,6 +20,13 @@ class SaleLine extends Model implements Transformable
      *
      * @var array
      */
-    protected $fillable = ['id','sale_order_id','product_id','price_current'];
+    protected $fillable = ['id','sale_order_id','units','product_id','price_current'];
 
+    public function sale(){
+        return $this->belongsTo(SaleOrder::class);
+    }
+
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
 }
