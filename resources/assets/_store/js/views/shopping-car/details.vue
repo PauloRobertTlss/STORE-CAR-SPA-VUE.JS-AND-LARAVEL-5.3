@@ -244,7 +244,7 @@
                             if(valid){
                                 this.$store.dispatch(`saveSale`)
                                     .then((response) => {
-                                        this.$message.success('Sucesso! Vamos processar o Pedido.')
+                                        this.$message.success('Sucesso! Vamos processar o Pedido.');
                                         this.sale.init();
                                     });
                                 return;
