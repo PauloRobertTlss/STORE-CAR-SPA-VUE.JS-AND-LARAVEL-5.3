@@ -24,7 +24,7 @@
     export default {
         computed: {
             productCurrent(){
-                return this.$store.state.product.productCurrent
+                return this.$store.state.product.entityCurrent
             }
         },
         mounted() {

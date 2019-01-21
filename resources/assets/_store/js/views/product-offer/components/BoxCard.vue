@@ -34,7 +34,7 @@ export default {
       'roles'
     ]),
       productCurrent(){
-          return this.$store.state.product.productCurrent
+          return this.$store.state.product.entityCurrent
       }
   },
   filters: {

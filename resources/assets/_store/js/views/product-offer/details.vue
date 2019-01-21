@@ -28,7 +28,7 @@
                 'sumUnits'
             ]),
             productCurrent(){
-                return this.$store.state.product.productCurrent
+                return this.$store.state.product.entityCurrent
             }
         },
         created() {
