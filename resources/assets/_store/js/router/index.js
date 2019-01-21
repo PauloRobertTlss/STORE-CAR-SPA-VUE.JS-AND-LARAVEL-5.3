@@ -7,7 +7,8 @@ Vue.use(Router);
 import Layout from '../views/layout/Layout'
 import home from '../views/home/index'
 import fetchProductsList from '../views/product-offer/list'
-import productsDetails from '../views/product-offer/details'
+import productDetails from '../views/product-offer/details'
+import saleDetails from '../views/shopping-car/details'
 
 export const constantRouterMap = [
     {
@@ -62,7 +63,7 @@ export const asyncRouterMap = [
             },
             {
                 path: '/products/:id/details',
-                components:{default: productsDetails},
+                components:{default: productDetails},
                 name: 'productShow',
                 meta: {
                     title: 'details',
@@ -73,6 +74,28 @@ export const asyncRouterMap = [
                     id: null
                 },
                 hidden: true
+            }]
+    },
+    {
+        path: '/manageSale',
+        component: Layout,
+        redirect: '/sale',
+        alwaysShow: true, // will always show the root menu
+        name: 'manageSale',
+        meta: {
+            title: 'sale',
+            icon: 'cash-machine'
+        },
+        children: [
+            {
+                path: '/sale',
+                components:{default: saleDetails},
+                name: 'saleShow',
+                meta: {
+                    title: 'delivery',
+                    icon: 'trolley',
+                    badge: true
+                }
             }]
     },
     { path: '*', redirect: '/home', hidden: true }
