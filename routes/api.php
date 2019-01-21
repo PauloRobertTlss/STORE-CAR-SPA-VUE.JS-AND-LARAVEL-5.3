@@ -14,14 +14,13 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['middleware'=>'cors'], function (){
-
     Route::prefix('v1')
         ->namespace('Api\V1')
         ->group(function () {
 
+            Route::get('/buscarCep', 'AddressesController@buscarCep');
+
             Route::resource('/products', 'ProductsController',['except' => ['edit', 'create']]);
             Route::resource('/sales', 'SaleOrdersController',['except' => ['edit', 'create','show']]);
-
-
         });
 });
