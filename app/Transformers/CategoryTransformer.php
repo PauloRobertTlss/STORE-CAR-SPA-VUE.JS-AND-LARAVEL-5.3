@@ -23,8 +23,8 @@ class CategoryTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-            'title'         => (String) $model->title
-
+            'title'         => (String) $model->title,
+            'count_offers' => (int) $model->products()->count()
 
         ];
     }
