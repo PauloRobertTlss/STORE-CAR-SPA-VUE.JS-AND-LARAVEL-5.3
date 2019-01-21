@@ -9,6 +9,7 @@ import home from '../views/home/index'
 import fetchProductsList from '../views/product-offer/listAbstract'
 import productDetails from '../views/product-offer/details'
 import saleDetails from '../views/shopping-car/details'
+import fetchOrdersList from '../views/sale-order/list'
 
 export const constantRouterMap = [
     {
@@ -96,18 +97,17 @@ export const asyncRouterMap = [
         alwaysShow: true, // will always show the root menu
         name: 'manageSale',
         meta: {
-            title: 'sale',
+            title: 'sales',
             icon: 'handshake'
         },
         children: [
             {
                 path: '/sale/all',
-                components:{default: saleDetails},
-                name: 'saleShow',
+                components:{default: fetchOrdersList},
+                name: 'saleOrders',
                 meta: {
                     title: 'all',
-                    icon: 'trolley',
-                    badge: true
+                    icon: 'chart'
                 }
             }]
     },
