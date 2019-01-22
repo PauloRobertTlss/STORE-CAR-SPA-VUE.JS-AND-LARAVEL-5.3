@@ -1,4 +1,4 @@
-<p align="center"><img src="https://cdn.leroymerlin.com.br/assets/lizard/images/logo-leroy.svg"></p>
+<p align="center"><img src="https://warlord0blog.files.wordpress.com/2018/03/vue-laravel.png?w=300"></p>
 
 <p align="center">
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
