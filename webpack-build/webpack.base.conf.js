@@ -13,13 +13,13 @@ function resolve (dir) {
 module.exports = {
     context: path.resolve(__dirname, '../'),
     entry: {
-        store: ['./resources/assets/_store/js/spa.js'],
+        spa: ['./resources/assets/_store/js/spa.js'],
     },
     output: {
         path: config.build.assetsRoot,
         filename: '[name].bundle.js',
         publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
-        chunkFilename: '[id].[chunkhash].js'
+        chunkFilename: '[id].store.js'
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],
