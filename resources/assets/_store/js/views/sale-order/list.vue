@@ -3,38 +3,26 @@
      <el-row :gutter="8" >
       <el-col :xs="{span: 24}" :sm="{span: 24}" :md="{span: 24}" :lg="{span: 24}" :xl="{span: 24}" style="margin-bottom:30px;">
           <el-table :data="sales" style="width: 100%;padding-top: 15px;">
-            <el-table-column label="#" width="50">
+            <el-table-column label="Registro há" min-width="60px">
               <template slot-scope="scope">
-                <svg-icon icon-class="shopping-barcode"></svg-icon>
+                {{scope.row.created_at | timeAgo}}
               </template>
             </el-table-column>
-            <el-table-column label="Nome" min-width="160" align="center">
-              <template slot-scope="scope">
-                {{scope.row.name}}
+            <el-table-column label="Cliente" min-width="120px" align="left">
+              <template slot-scope="scope" v-if="scope.row.customer">
+                {{scope.row.customer.data.name}}
                 <el-row :gutter="8">
-                  <el-tag type="primary" :key="t.id" v-for="t in scope.row.tags.data"> {{t.title}}</el-tag>
+
+                  <span :key="t.id" v-for="t in scope.row.customer.data.contacts.data">
+                    <el-tag v-if="isPhone(t.type)"><svg-icon icon-class="phone"></svg-icon>&nbsp;{{t.contact}}</el-tag>
+                    <span v-else><svg-icon icon-class="email"></svg-icon>&nbsp;{{t.contact}}</span>
+                  </span>
                 </el-row>
               </template>
             </el-table-column>
-            <el-table-column label="Valor" min-width="60px" align="center">
-              <template slot-scope="scope">
-                {{scope.row.price | numberFormatter(true)}}
-              </template>
-            </el-table-column>
-            <el-table-column label="Qtd." min-width="60px" align="center">
-              <template slot-scope="scope">
-                <span> {{scope.row.units}}</span>
-                <el-button circle @click="incrementLine(scope.row)">
-                  <svg-icon class="increment" icon-class="add"></svg-icon>
-                </el-button>
-                <el-button circle @click="decrementLine(scope.row)">
-                  <svg-icon icon-class="cancel"></svg-icon>
-                </el-button>
-              </template>
-            </el-table-column>
-            <el-table-column label="SubTotal" min-width="60px" align="center">
-              <template slot-scope="scope">
-                {{(scope.row.price * scope.row.units) | numberFormatter(true)}}
+            <el-table-column label="Estado" min-width="30px" align="center">
+              <template slot-scope="scope" v-if="scope.row.address">
+                {{scope.row.address.data.state }}
               </template>
             </el-table-column>
           </el-table>
@@ -42,10 +30,7 @@
     </el-row>
   </div>
 </template>
-
 <script>
-
-    import { mapGetters } from 'vuex'
     export default {
         name: 'saleOrdersList',
         data(){
@@ -54,9 +39,6 @@
             }
         },
         computed: {
-            ...mapGetters([
-                'car_shopping_itens'
-            ]),
             sales(){
                 return this.$store.state.order.entities
             }
@@ -67,6 +49,9 @@
           },
             getList(){
               this.$store.dispatch(`${this.namespace()}/query`)
+            },
+            isPhone(type){
+              return type.toLowerCase().includes('phone')
             }
         },
         mounted() {
@@ -75,4 +60,7 @@
     }
 </script>
 <style type="text/scss" lang="scss" scoped>
+  .el-tag{
+    margin-left: 6px;
+  }
 </style>
