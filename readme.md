@@ -1,51 +1,167 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center"><img src="https://cdn.leroymerlin.com.br/assets/lizard/images/logo-leroy.svg"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Sobre o Projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+O Projeto traz aos usuários uma experiência quase desktop com esse leve Single Page Application, e de maneira conveniente os usuários poderão apreciar algumas rotinas de e-commerce como o carrinho de comprar, buscar rápida de produtos, lista de categorias e por fim a confirmação do pedido. Seria simples avaliar mas o grande ponto neste projeto são as tecnologias e boas práticas presentes na sua estrutura.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![page_design](https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/home.png)
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+## Instalação
 
-## Learning Laravel
+#### Ambiente Atual
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+```shell
+$ php -v
+PHP 7.1.18 (cli) (built: May 24 2018 17:55:12) ( ZTS MSVC14 (Visual C++ 2015) x64 )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies
+```
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+```shell
+$ composer -v
+You are running Composer with SSL/TLS protection disabled.
+   ______
+  / ____/___  ____ ___  ____  ____  ________  _____
+ / /   / __ \/ __ `__ \/ __ \/ __ \/ ___/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ (__  )  __/ /
+\____/\____/_/ /_/ /_/ .___/\____/____/\___/_/
+                    /_/
+Composer version 1.5.1 2017-08-09 16:07:22
 
-## Laravel Sponsors
+```
+```shell
+$ node -v
+v6.5.0
+```
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+```shell
+$ npm -v
+3.10.3
+```
+#### Composer
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
+* Instalação das bibliotecas PHP `composer.json`.
 
-## Contributing
+    - Dentro do diretório do projeto execute.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+```shell
+composer update
+```
+###### instalando...
 
-## Security Vulnerabilities
+![page_design](https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/composer_update.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-## License
+* Instalação das bibliotecas JavaScript  `package.json`.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+  - Dentro do diretório do projeto execute.
+
+```shell
+npm install
+```
+   <small>paciência aqui.. node_module é gigantesco</small>      
+![page_design](https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/npm_install.png)
+
+
+#### Configurar .ENV 
+
+Faça uma copia do arquivo `.env.example` edite o novo arquivo.
+
+```shell
+cp .env.example .env
+```
+![page_design](https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/laravel_env.png)
+
+
+Configurar conexão com banco de dados, padrão Mysql.
+
+### Artisan
+
+```shell
+php artisan key:generate
+```
+
+### Migração
+
+```shell
+php artisan migrate --seed
+```
+![page_design](https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/migration.png)
+
+##### * `--seed` irá hidratar as tabelas com informações de teste. Na Produção remover.  
+
+### Build de Produção
+
+- Gerar página de boot do SPA (single page application).
+
+```shell
+npm run prod --production
+```
+```shell
+$ npm run prod --production
+
+> webpack --config=./webpack-build/webpack.prod.conf.js
+
+Hash: 31ab099ee5bc76c9a747
+Version: webpack 3.10.0
+Time: 66799ms
+                                   Asset     Size  Chunks                    Chunk Names
+../build/fonts/element-icons.6f0a763.ttf    11 kB          [emitted]
+              ../build/js/vendor.prod.js  1.22 MB       0  [emitted]  [big]  vendor
+                 ../build/js/spa.prod.js   434 kB       1  [emitted]  [big]  spa
+            ../build/js/manifest.prod.js   1.4 kB       2  [emitted]         manifest
+[+Wvm] ./resources/assets/_store/sass/index.scss 568 bytes {1} [built]
+
+```
+
+### Modo Produção
+
+ - No arquivo `.env` altere para APP_ENV=production.
+ - No arquivo `.env` altere para APP_DEBUG=false.
+
+### Testando
+
+```shell
+php artisan serve
+```
+
+### Front-end - SPA (single page application)
+
+O Html5 e Javascript ganharam super poderes e responsabilidades distintas, a primeria camada desse projeto usufluir de um framework Javascript e têm a responsabilidade de manter do lado cliente um ecossistema de rotas; templates; e hidratar as listas por AJAX sem o release de pagina. O Vue.js framework atendeu em todos os requisito o proposito deste projeto.
+
+### Flux - Vuex
+
+Vue.js possuir suporte à design FLUX. Flux é a arquitetura de aplicativo que o Facebook usa para criar aplicativos da Web do lado do cliente. Ele complementa os componentes de visualização compostos do React utilizando um fluxo de dados unidirecional. É mais um padrão do que um framework formal. [Detalhes](https://youtu.be/nYkdrAPrdcw?list=PLb0IAmt7-GS188xDYE-u1ShQmFFGbrk0v)  
+
+### Back-end - Laravel - PHP
+
+Laravel Framework - A camada lógica deste projeto será mantida pelo framework PHP mais utilizado no momento, com uma curva de desenvolvimento acentuada outras camadas foram suficientes para assegurar uma boa escabilidade e manutenções. 
+
+### JSON RESPONSE
+
+As APIs por padrão usam o formato JSON em suas respostas. Todas as respostas serão interceptadas pela camada de apresentação [Model–view–presenter (MVP)](https://pt.wikipedia.org/wiki/Model-view-presenter)
+
+### CORS - policy.
+ 
+ - Postman: Headers adicione Origin:
+
+![Origin](https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/certificados/headers.png)
+
+ - Para sua hostedagem o arquivo config\cors.php
+    ```php
+        return [   
+        'supportsCredentials' => false,
+        'allowedOrigins' => ['http://127.0.0.1:8000',
+                         'ADICIONE AQUI'
+                        ],
+            'allowedOriginsPatterns' => [],
+            'allowedHeaders' => ['*'],
+            'allowedMethods' => ['*'],
+            'exposedHeaders' => [],
+            'maxAge' => 0
+        ];
+   ```
