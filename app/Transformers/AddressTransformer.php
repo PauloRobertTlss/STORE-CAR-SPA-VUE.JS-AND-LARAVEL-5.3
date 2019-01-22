@@ -23,11 +23,11 @@ class AddressTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-
-            /* place your other model properties here */
-
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'route'         => (string) $model->id,
+            'number'         => (int) $model->number,
+            'neighborhood'         => (string) $model->neighborhood,
+            'city'         => (string) $model->city,
+            'state'         => (string) $model->state,
         ];
     }
 }

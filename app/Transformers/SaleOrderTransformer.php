@@ -25,8 +25,7 @@ class SaleOrderTransformer extends TransformerAbstract
     {
         return [
             'id'         => (int) $model->id,
-
-            'created_at' => $model->created_at->format('Y-mm-d H:i:s')
+            'created_at' => $model->created_at->format('Y-m-d H:i:s')
         ];
     }
 
