@@ -10,8 +10,6 @@ exports.assetsPath = function (_path) {
     ? config.build.assetsSubDirectory
     : config.dev.assetsSubDirectory;
 
-  console.log('endereço: '+assetsSubDirectory);
-  console.log('endereço build: '+ config.build.assetsSubDirectory);
   return path.posix.join(assetsSubDirectory, _path)
 };
 
