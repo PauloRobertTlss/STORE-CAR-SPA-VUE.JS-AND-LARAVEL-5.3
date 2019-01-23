@@ -21,7 +21,7 @@ class CreateSaleLinesTable extends Migration
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->integer('sale_order_id')->unsigned()->index();
             $table->foreign('sale_order_id')->references('id')->on('products')->onDelete('cascade');
-            $table->double('price_current',15,2);
+            $table->double('price_current',15,2)->default(0.0);
             $table->double('units',15,2);
             $table->timestamps();
 		});
