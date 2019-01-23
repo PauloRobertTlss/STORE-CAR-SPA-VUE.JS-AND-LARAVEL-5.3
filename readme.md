@@ -6,7 +6,7 @@
 
 ## Sobre o Projeto
 
-O Projeto traz aos usuários uma experiência quase desktop com esse leve Single Page Application, e de maneira conveniente os usuários poderão apreciar algumas rotinas de e-commerce como o carrinho de comprar, buscar rápida de produtos, lista de categorias e por fim a confirmação do pedido. Seria simples avaliar mas o grande ponto neste projeto são as tecnologias e boas práticas presentes na sua estrutura.
+O Projeto traz aos usuários uma experiência quase desktop com esse leve Single Page Application, e de maneira conveniente os usuários poderão apreciar algumas rotinas de e-commerce como o carrinho de compra, busca rápida de produtos, lista de categorias até a confirmação do pedido. Seria simples avaliar mas o grande ponto neste projeto são as tecnologias e boas práticas presentes na sua estrutura.
 
 ![page_design](https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/home.png)
 
