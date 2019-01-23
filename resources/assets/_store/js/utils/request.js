@@ -15,8 +15,8 @@ function addSubscriber(callback) {
 
 // create an axios instance
 const service = axios.create({
-  // baseURL: process.env.BASE_API, or //
-  baseURL: 'http://127.0.0.1:8000/api', //
+  baseURL: process.env.BASE_API,
+  //baseURL: 'http://127.0.0.1:8000/api', //
   timeout: (1000 * 60) * 2 // request timeout
 });
 
