@@ -10,6 +10,11 @@ O Projeto traz aos usuários uma experiência quase desktop com esse leve Single
 
 ![page_design](https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/home.png)
 
+### Live Demo
+
+   * [e-commerc](http://www.tlss-cloud.com.br/#/home) - link.  
+
+
 ## Instalação
 
 #### Ambiente Atual
@@ -65,7 +70,7 @@ npm install
 ```
    <small>paciência aqui.. node_module é gigantesco</small>      
 ![page_design](https://s3.us-east-2.amazonaws.com/eaadk4yfoubad0tmoq3cert/notebooks/npm_install.png)
-
+##### * `versão` atenção aqui nas versões instaladas.
 
 #### Configurar .ENV 
 
@@ -96,8 +101,18 @@ php artisan migrate --seed
 
 ### Build de Produção
 
-- Gerar página de boot do SPA (single page application).
+- Configurar requisições de Front-end. BASE_URL.
+    
+    * Acesse o arquivo. `resource/assets/_store/js/utils/request`
+    
+```shell
+const service = axios.create({
+  baseURL: EXEMPLO >> 'http://127.0.0.1:8000/api', 
+  timeout: (1000 * 60) * 2 // request timeout
+});
+```
 
+- Gerar página de boot do SPA (single page application).
 ```shell
 npm run prod --production
 ```
