@@ -62,7 +62,14 @@ composer update
 
 * Instalação das bibliotecas JavaScript  `package.json`.
 
-  - Dentro do diretório do projeto execute.
+  - Pacote Global
+  
+```thell
+npm install webpack@3.10.0 -g
+npm install node-sass@4.7.2 -g
+```
+ 
+- Dentro do diretório do projeto execute.
 
 ```shell
 npm install
