@@ -20,12 +20,10 @@
             search(after,before)
             {
                 this.moverOffers()
-
-
                 if(after.length > 1) {
-                    this.$store.commit('SET_PRODUCT_CURRENT_PAGE', 0);
-                    this.$store.commit('SET_PRODUCT_FILTER', after);
-                    this.$store.dispatch('queryProducts')
+                    this.$store.commit('product/SET_ENTITY_CURRENT_PAGE', 0);
+                    this.$store.commit('product/SET_ENTITY_FILTER', after);
+                    this.$store.dispatch('product/query')
                 }
             }
         },
