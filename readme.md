@@ -12,8 +12,7 @@ O Projeto traz aos usuários uma experiência quase desktop com esse leve Single
 
 ### Live Demo
 
-   * [e-commerc](http://www.tlss-cloud.com.br/#/home) - link.  
-
+  * <a href="http://www.tlss-cloud.com.br/#/home" target="_blank">e-commerc</a> - Meu carrinho.
 
 ## Instalação
 
